@@ -38,5 +38,9 @@
   "bugs": {
     "url": "https://github.com/yuhmanashi/SocialNetwork/issues"
   },
-  "homepage": "https://github.com/yuhmanashi/SocialNetwork#readme"
+  "homepage": "https://github.com/yuhmanashi/SocialNetwork#readme",
+  "engines": {
+    "node": "12.5.0",
+    "npm": "6.9.0"
+  }
 }
