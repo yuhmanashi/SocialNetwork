@@ -64,7 +64,7 @@ class LogInForm extends React.Component {
                             Wrong Credentials
                         </p>
 
-                        <button onSubmit={this.handleSubmit}>Log In</button>
+                        <button onClick={this.handleSubmit}>Log In</button>
                         
                         <br/>
                         

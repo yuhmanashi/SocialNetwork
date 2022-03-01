@@ -19,4 +19,3 @@ const App = () => (
 export default App;
 
 // <Route path="/" component={NavBarContainer}/>
-// <Route exact path="/" component={Splash}/>
