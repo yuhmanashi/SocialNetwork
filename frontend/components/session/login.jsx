@@ -20,7 +20,6 @@ class LogInForm extends React.Component {
     }
     
     render() {
-        const { errors } = this.props;
         const { email, password } = this.state;
 
         return (
@@ -44,7 +43,6 @@ class LogInForm extends React.Component {
                             value={ email }
                             onChange={this.update('email')}
                             placeholder="Email"
-                            style={ errors.includes('Wrong credentials') ? ({ borderColor: 'red'}) : ({ borderColor: "" })} 
                         />
                         
                         <br/>
@@ -55,16 +53,11 @@ class LogInForm extends React.Component {
                             value={ password }
                             onChange={this.update('password')}
                             placeholder="Password"
-                            style={ errors.includes('Wrong credentials') ? ({ borderColor: 'red'}) : ({ borderColor: "" })}
                         />
                         
                         <br/>
-                        
-                        <p id="error" style={ errors.includes('Wrong credentials') ? ({ display: ''}) : ({ display: "none" })}>
-                            Wrong Credentials
-                        </p>
 
-                        <button onSubmit={this.handleSubmit}>Log In</button>
+                        <button onClick={this.handleSubmit}>Log In</button>
                         
                         <br/>
                         
