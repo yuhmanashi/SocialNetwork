@@ -10,3 +10,6 @@ const RootReducer = combineReducers({
 });
 
 export default RootReducer;
+
+// errors: ErrorsReducer,
+// entities: EntitiesReducer

@@ -27,7 +27,6 @@ export const signUp = user => dispatch => (
     SessionUtil.signUp(user)
         .then(
             user => dispatch(receiveCurrentUser(user)),
-            err => dispatch(recieveErrors(err.responseJSON))
         )
 );
 
@@ -35,7 +34,6 @@ export const logIn = user => dispatch => (
     SessionUtil.logIn(user)
         .then(
             user => dispatch(receiveCurrentUser(user)),
-            err => dispatch(recieveErrors(err.responseJSON))
         )
 );
 
