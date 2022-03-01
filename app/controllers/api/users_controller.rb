@@ -1,15 +1,7 @@
 class Api::UsersController < ApplicationController
-    def index
-        @users = User.all
-    end  
-      
     def show
         @user = User.find(params[:id])
-        if @user
-            render :show
-        else
-            render json: @user.errors.full_messages, status: 404
-        end
+        render :show
     end
       
     def create
@@ -24,10 +16,8 @@ class Api::UsersController < ApplicationController
       
     def update
         @user = User.find(params[:id])
-        if @user && @user.update(user_params)
+        if @user.update(user_params)
             render :show
-        elsif !@user
-            render json: ['Cannot find user'], status: 400
         else
             render json: @user.errors.full_messages, status: 401
         end

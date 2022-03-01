@@ -1,0 +1,18 @@
+.splash-page {
+    width: 100vw;
+    height: 80%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+}
+
+.splash-page > .login-form {
+    margin-left: 150px;
+    border: 1px solid black;
+}
+
+.splash-page > .welcome {
+    box-sizing: border-box;
+}

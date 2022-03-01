@@ -16,39 +16,66 @@ class LogInForm extends React.Component {
     }
 
     update(field) {
-        return e => this.setState({ [field]: e.target.value })
+        return e => this.setState({ [field]: e.currentTarget.value })
     }
     
     render() {
-        const { email, password } = this.props;
+        const { errors } = this.props;
+        const { email, password } = this.state;
 
         return (
-            <div className="login-page">
-                <div className="login-form">
-                    <div className="login-message">
-                        <h1>Log In</h1>
+            <div className="splash-page">
+                
+                <div className="welcome">
+                    <div className="logo">
+                        <h1>SocialNetwork</h1>
                     </div>
-
+                    
+                    <div className="message">
+                        <p>Connect with friends and the world around you on SocialNetwork.</p>
+                    </div>
+                </div>
+                
+                <div className="login-form">
                     <form>
-                        <label>
-                            Email
-                            <input 
-                                type="text" 
-                                value={ email }
-                                onChange={this.update('email')}
-                            />
-                        </label>
-                        <label>
-                            Password
-                            <input 
-                                type="password" 
-                                value={ password }
-                                onChange={this.update('password')}
-                            />
-                        </label>
+                        <input
+                            id="email" 
+                            type="text" 
+                            value={ email }
+                            onChange={this.update('email')}
+                            placeholder="Email"
+                            style={ errors.includes('Wrong credentials') ? ({ borderColor: 'red'}) : ({ borderColor: "" })} 
+                        />
+                        
+                        <br/>
+                        
+                        <input
+                            id="password" 
+                            type="text" 
+                            value={ password }
+                            onChange={this.update('password')}
+                            placeholder="Password"
+                            style={ errors.includes('Wrong credentials') ? ({ borderColor: 'red'}) : ({ borderColor: "" })}
+                        />
+                        
+                        <br/>
+                        
+                        <p id="error" style={ errors.includes('Wrong credentials') ? ({ display: ''}) : ({ display: "none" })}>
+                            Wrong Credentials
+                        </p>
+
                         <button onSubmit={this.handleSubmit}>Log In</button>
+                        
+                        <br/>
+                        
+                        <a href="">Demo</a>
+                        
+                        <br/>
+
+                        <button>Sign Up</button>
                     </form>
                 </div>
+            
             </div>
         )
     }
