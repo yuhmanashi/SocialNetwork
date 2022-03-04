@@ -1,0 +1,52 @@
+.nav-bar {
+    background-color: white;
+    border: 1px white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+
+    .right {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        
+        h2 {
+            color: #1978f2;
+            margin-right: 20px;
+        }
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        width: 300px;
+
+        .home-icon, .friends-icon, .group-icon {
+            background: white;
+            margin: 40px;
+        }
+        
+    }
+
+    .left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+
+        .profile-icon, .logout {
+            margin: 10px;
+            background: white;
+        }
+    }
+
+    img {
+        height: 48px;
+        width: 48px;
+        background-color: white;
+    }
+}

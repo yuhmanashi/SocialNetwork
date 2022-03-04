@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ @import './reset.scss';
+ @import './font.scss';
+ @import './splash/splash.scss';
+ @import './ui/modal.scss';
+ @import './home/home.scss';
+ @import './ui/navbar.scss';
+ @import './api/posts.scss'

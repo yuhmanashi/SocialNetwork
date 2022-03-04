@@ -1,0 +1,33 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 50%;
+
+        form input .createpost {
+            border-radius: 10px;
+        }
+    }
+    
+    .etc {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+    }
+}

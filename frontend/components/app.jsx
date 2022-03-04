@@ -1,16 +1,17 @@
 import React from 'react';
-import NavBarContainer from './nav_bar/nav_bar_container';
 import SignUpContainer from './session/signup_container';
 import LogInContainer from './session/login_container';
-import Home from './home/home';
+import HomeContainer from './home/home_container';
+import ModalContainer from './modal/modal_container';
+import NavBarContainer from './nav_bar/nav_bar_container';
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
+        <ModalContainer />
         <AuthRoute path="/" component={LogInContainer} />
-        <AuthRoute path="/signup" component={SignUpContainer} />
-        <ProtectedRoute path="/home" component={Home} />
+        <ProtectedRoute path="/home" component={HomeContainer} />
     </div>
 )
 

@@ -1,42 +1,38 @@
 import React from 'react';
+import NavBarContainer from '../nav_bar/nav_bar_container';
+import PostIndexContainer from '../posts/post_index_container';
 
-// class Home extends React.Component {
-//     constructor(props){
-//         super(props);
-//     }
+class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        this.logout = this.logout.bind(this)
+    }
 
-//     componentDidMount() {
-//         this.props.getUser(this.props.user.id);
-//     }
-    
-//     render(){
-//         const { first_name } = this.props;
-        
-//         return(
-//             <div className="home-page">
-//                 <h1>Home</h1>
-//                 <p>Welcome, {first_name}</p>
-//             </div>
-//         )
-//     }
-// }
+    logout(e) {
+        e.preventDefault();
+        this.props.logOut();
+    }
 
-// class Home extends React.Component {
-//     render(){
-//         return(
-//             <div className='homepage'>
-//                 <h1>Home</h1>
-//                 <p>Welcome</p>
-//             </div>
-//         )
-//     }
-// }
+    render(){
+        return(
+            <div className='homepage'>
+                <NavBarContainer />
+                <div className='page'>
+                    <div className="menu">
+                        <p>Menu goes here</p>
+                    </div>
+                    <div className='content'>
+                        <h1>Home</h1>
+                        <p>Welcome</p>
+                        <PostIndexContainer />
+                    </div>
+                    <div className="etc">
+                        <p>Ads and etc go here</p>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
 
-// export default Home;
-
-export default () => (
-    <div className='homepage'>
-        <h1>Home</h1>
-        <p>Welcome</p>
-    </div>
-)
+export default Home;

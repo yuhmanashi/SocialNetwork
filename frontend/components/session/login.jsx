@@ -8,6 +8,8 @@ class LogInForm extends React.Component {
             password: '',
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoAccount = this.demoAccount.bind(this);
+        this.openModal = this.openModal.bind(this);
     }
 
     handleSubmit(e) {
@@ -19,56 +21,76 @@ class LogInForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value })
     }
     
+    demoAccount(){
+        const info = {
+            email: 'demo@socialnetwork.com',
+            password: 'password'
+        }
+
+        this.props.logIn(info)
+    }
+
+    openModal() {
+        this.props.openModal('signup');
+    }
+
     render() {
         const { email, password } = this.state;
+        const { errors } = this.props;
+
+        let color = '';
+        let error = '';
+
+        if (errors.includes('Wrong email and/or password')) {
+            error = 'Invalid email and/or password. Please try again.';
+            color = 'red'
+        }
 
         return (
             <div className="splash-page">
-                
-                <div className="welcome">
-                    <div className="logo">
+                <div className="main">
+                    <div className="welcome">
                         <h1>SocialNetwork</h1>
+                        <p>Connect with friends and the world</p>
+                        <p>around you on SocialNetwork.</p>
                     </div>
-                    
-                    <div className="message">
-                        <p>Connect with friends and the world around you on SocialNetwork.</p>
-                    </div>
-                </div>
                 
-                <div className="login-form">
-                    <form>
-                        <input
-                            id="email" 
-                            type="text" 
-                            value={ email }
-                            onChange={this.update('email')}
-                            placeholder="Email"
-                        />
-                        
-                        <br/>
-                        
-                        <input
-                            id="password" 
-                            type="text" 
-                            value={ password }
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        
-                        <br/>
+                    <div className="login-form">
+                        <form>
+                            <div className="login-error">
+                                <p>{ error }</p>
+                            </div>
 
-                        <button onClick={this.handleSubmit}>Log In</button>
+                            <input
+                                id="email" 
+                                type="text" 
+                                value={ email }
+                                onChange={this.update('email')}
+                                placeholder="Email"
+                                style={({borderColor: color})}
+                            />
                         
-                        <br/>
-                        
-                        <a href="">Demo</a>
-                        
-                        <br/>
+                            <input
+                                id="password" 
+                                type="password" 
+                                value={ password }
+                                onChange={this.update('password')}
+                                placeholder="Password"
+                                style={({borderColor: color})}
+                            />
 
-                        <button>Sign Up</button>
-                    </form>
+                            <div className="login-button" onClick={this.handleSubmit}>Log In</div>
+                        
+                            <div className="demo" onClick={this.demoAccount}>Demo?</div>
+
+                            <hr className="hr-top" />
+
+                            <div className="signup-button" onClick={this.openModal}>Create new account</div>
+                        </form>
+                    </div>
                 </div>
-            
+                <div className="footer">
+                </div>
             </div>
         )
     }
