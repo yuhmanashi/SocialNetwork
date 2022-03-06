@@ -1,6 +1,8 @@
 import React from 'react';
 import SignupContainer from '../session/signup_container';
 import EditPostContainer from '../posts/edit_post_form_container'
+import CreatePostFormContainer from '../posts/create_post_form_container';
+
 class Modal extends React.Component {
     close(){
         return e => this.props.closeModal()
@@ -18,8 +20,12 @@ class Modal extends React.Component {
             case 'signup':
                 form = <SignupContainer />;
                 break;
+            case 'createpost':
+                form = <CreatePostFormContainer />;
+                break;
             case 'editpost':
                 form = <EditPostContainer />;
+                break;
             default:
                 return null;
         }

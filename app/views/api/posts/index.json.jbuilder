@@ -8,5 +8,6 @@
 @posts.each do |post|
     json.set! post.id do
       json.partial! 'post', post: post
+      json.extract! post.user, :first_name, :last_name
     end
 end

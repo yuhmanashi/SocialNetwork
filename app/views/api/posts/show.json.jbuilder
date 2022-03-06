@@ -2,3 +2,4 @@
 # json.extract! @post.user, :first_name, :last_name
 
 json.partial! 'post', post: @post
+json.extract! @post.user, :first_name, :last_name

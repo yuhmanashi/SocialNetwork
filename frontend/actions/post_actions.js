@@ -26,7 +26,7 @@ export const fetchPosts = () => dispatch => (
 
 export const fetchPost = postId => dispatch => (
     PostUtil.fetchPost(postId)
-        .then(postId => dispatch(receivePost(postId)))
+        .then(post => dispatch(receivePost(post)))
 )
 
 export const createPost = post => dispatch => (

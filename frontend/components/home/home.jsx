@@ -22,8 +22,6 @@ class Home extends React.Component {
                         <p>Menu goes here</p>
                     </div>
                     <div className='content'>
-                        <h1>Home</h1>
-                        <p>Welcome</p>
                         <PostIndexContainer />
                     </div>
                     <div className="etc">
