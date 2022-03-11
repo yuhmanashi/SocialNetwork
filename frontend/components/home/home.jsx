@@ -38,13 +38,13 @@ class Home extends React.Component {
                             </div> */}
                             <div className="github">
                                 <a href="https://github.com/yuhmanashi/SocialNetwork/">
-                                    <img className='glogo' src="../../../assets/github-logo.png" />
+                                    <img className='glogo' src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/github-logo.png?raw=true" />
                                 </a>
                                 <div className="title">Github</div>
                             </div>
                             <div className='linkedin'>
                                 <a href="https://linkedin.com/in/yaoxu03">
-                                    <img className='lilogo' src="../../../assets/linkedin-logo.png"/>
+                                    <img className='lilogo' src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/linkedin-logo.png?raw=true"/>
                                 </a>
                                 <div className="title">LinkedIn</div>
                             </div>
@@ -59,7 +59,7 @@ class Home extends React.Component {
                             <hr className="hr-top"/>
                             <div className='game-ad'>
                                 <a href="https://yuhmanashi.github.io/Defend_the_Realm/">
-                                    <img className='game' src="../../../assets/ad.png"/>
+                                    <img className='game' src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/ad.png?raw=true"/>
                                 </a>
                             </div>
                             <h3>Defend The Realms</h3>

@@ -39,7 +39,7 @@ class NavBar extends React.Component {
       <div className="nav-bar">
         {/* <UserContainer /> */}
         <div className ='right'>
-          <img className='logo' src="../../../assets/s-logo.png"  />
+          <img className='logo' src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/s-logo.png?raw=true"  />
           {/* <br/>
           <input type="text" placeholder='Search'/> */}
         </div>
