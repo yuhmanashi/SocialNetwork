@@ -1,11 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> branch2
-import SignUpContainer from './session/signup_container';
->>>>>>> main
 import LogInContainer from './session/login_container';
 import HomeContainer from './home/home_container';
 import ModalContainer from './modal/modal_container';
@@ -15,13 +8,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
         <ModalContainer />
-=======
->>>>>>> main
->>>>>>> branch2
         <AuthRoute path="/" component={LogInContainer} />
         <ProtectedRoute path="/home" component={HomeContainer} />
         <ProtectedRoute path="/friends" component={FriendsContainer} />

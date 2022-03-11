@@ -4,13 +4,6 @@ import PostIndexContainer from '../posts/post_index_container';
 import UserContainer from '../user/user_container';
 
 class Home extends React.Component {
-<<<<<<< HEAD
-    constructor(props){
-        super(props);
-    }
-
-=======
-<<<<<<< HEAD
     constructor(props) {
         super(props);
         this.logout = this.logout.bind(this)
@@ -20,30 +13,6 @@ class Home extends React.Component {
         e.preventDefault();
         this.props.logOut();
     }
-=======
-    constructor(props){
-        super(props);
-    }
-
->>>>>>> branch2
-    render(){
-        const { logOut } = this.props;
-        
-        return(
-            <div className="home-page">
-                <h1>Home</h1>
-                <p>Welcome</p>
-                <div className="logout">
-                    <button onClick={() => logOut}>Log Out</button>
-                </div>
-            </div>
-        )
-    }
-}
-<<<<<<< HEAD
-=======
->>>>>>> main
->>>>>>> branch2
 
     render(){
         if (!this.props) return null;
@@ -108,29 +77,4 @@ class Home extends React.Component {
     }
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 export default Home;
-=======
->>>>>>> branch2
-export default Home;
-
-// export default () => (
-//     <div className='homepage'>
-//         <h1>Home</h1>
-//         <p>Welcome</p>
-//         <div className="navbar">
-//             <header className="nav-bar">
-//                 <div>
-//                     <button onClick={logOut}>Log Out</button>
-//                 </div>
-//             </header>
-//         </div>
-//     </div>
-<<<<<<< HEAD
-// )
-=======
-// )
->>>>>>> main
->>>>>>> branch2

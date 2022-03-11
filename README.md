@@ -1,7 +1,8 @@
-# README
+# SocialNetwork
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+-------------------------------------------------
+
+SocialNetwork is a clone of Facebook. Like Facebook, on SocialNetwork one can create posts and comment on posts. A user can add other users as friends, 
 
 Things you may want to cover:
 
