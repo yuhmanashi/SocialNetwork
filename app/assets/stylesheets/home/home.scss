@@ -1,0 +1,132 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+
+    .page {
+        margin-top: 60px;
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            left: 0;
+            padding: 20px;
+
+            .menu-items {
+                .user-icon {
+                    display: flex;
+                    align-items: center;
+                    
+                    .userprofile-placeholder {
+                        padding: 10px;
+                        background: transparent;
+                        padding-left: 0;
+                        margin-top: 10px;
+                    
+                        .fa-circle-user {
+                            font-size: 40px;
+                            color: rgb(214, 214, 214);
+                        }
+                    }
+
+                    .name {
+                        font-weight: bold;
+                    }
+                }
+
+                .aboutme, .github, .linkedin {
+                    display: flex;
+                    padding: 5px;
+                    margin-top: 5px;
+                    padding-left: 0;
+                    
+                    .title {
+                        align-self: center;
+                        margin-left: 10px;
+                        font-weight: bold; 
+                    }
+                    
+                }
+
+                .aboutme .title {
+                    margin-left: 9px;
+                }
+                
+                .linkedin .title {
+                    margin-left: 5px;
+                }
+
+                div {
+                    img.slogo {
+                    height: 42px;
+                    width: 42px;
+                    }
+
+                    img.glogo {
+                        height: 40px;
+                        width: 40px;
+                    }
+                    
+                    img.lilogo {
+                        height: 38px;
+                        width: 46px;
+                    }
+                }
+            }
+        }
+        
+        .page-main {
+            display: flex;
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                width: 50%;
+                margin: 0 auto;
+                
+                .post-box {
+                    .create-post-box, .postcontainer{
+                    }
+                }
+                
+                form input .createpost {
+                    border-radius: 10px;
+                }
+            }
+            
+            .etc {
+                display: flex;
+                flex-direction: column;
+                width: 300px;
+                position: fixed;
+                right: 0;
+
+                p {
+                    font-weight: bold;
+                    margin-bottom: 0;
+                }
+
+                h3 {
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                }
+
+                .hr-bottom {
+                    margin-top: 15px;
+                    width: 432px;
+                    background-color: rgb(219, 230, 221);
+                    border: none;
+                    height: 1px;
+                }
+
+                .hr-top {
+                    width: 432px;
+                    background-color: rgb(219, 230, 221);
+                    border: none;
+                    height: 1px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,177 @@
+.post-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+
+    .create-post-box {
+        border: 1.5px solid white;
+        border-radius: 10px;
+        width: 600px;
+        height: 75px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        
+        .userprofile-placeholder {
+            padding: 10px;
+            background: white;
+            padding-left: 0;
+            margin-top: 10px;
+        
+            .fa-circle-user {
+                font-size: 40px;
+                color: rgb(214, 214, 214);
+            }
+        }
+
+        .create-post {
+            border: 1.5px solid #f0f2f5;
+            border-radius: 20px;
+            width: 500px;
+            padding: 10px;
+            color: rgb(100, 100, 100);
+        }
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 0;
+
+        .postitems {
+            border: 1.5px solid white;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: white;
+            width: 600px;
+
+            .head {
+                display: flex;
+                justify-content: space-between;
+                border-radius: 15px;
+                padding: 10px;
+
+                .userprofile-placeholder {
+                    padding-top: 11px;
+                    background: white;
+                    padding-left: 0;
+                    padding-right: 10px;
+    
+                    .fa-circle-user {
+                        font-size: xx-large;
+                        color: rgb(214, 214, 214);
+                    }
+                }
+
+                .header {
+                    display: flex;
+                    background-color: white;
+                    padding: 5px;
+
+                    .namedate > * {
+                        background-color: transparent;
+                        margin-bottom: 2px;
+
+                    }
+    
+                    .namedate {
+                        .name {
+                            font-size: 16px;
+                            font-weight: bold;
+                        }
+    
+                        .datetime {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .header > * {
+                    background-color: transparent;
+                }
+            }
+
+            .body {
+                font-size: 20px;
+                padding: 0;
+                
+                p {
+                    padding: 15px;
+                    padding-top: 0;
+                    margin: 0;
+                }
+            }
+
+            .likecomment {
+                display: flex;
+                justify-content: space-evenly;
+                padding: 0;
+            }
+
+            .likecomment > * {
+                background: white;
+            }
+            
+            .dropbutton {
+                background: transparent;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+
+                * {
+                    background: transparent;
+                    border-radius: 15px;
+                    padding: 5px;
+                }
+
+                .fa-ellipsis:hover {
+                    background: rgb(238, 238, 238);
+                }
+            }
+
+            .dropdown {
+                display: inline-block;
+                border-radius: 15px;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                min-width: 50px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                cursor: pointer;
+                border-radius: 10px;
+                padding: 5px;
+                
+                * {
+                    margin: 2px;
+                    background-color: transparent;
+                    font-size: 16px;
+                }
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            hr {
+                padding: 0;
+            }
+        }
+
+        .postitems > * {
+            background-color: white;
+            padding: 15px;
+        }
+
+        .postitems > * > * {
+            background-color: white;
+        }
+    }
+}

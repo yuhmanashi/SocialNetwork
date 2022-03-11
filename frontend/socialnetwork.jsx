@@ -11,19 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.currentUser) {
         preloadedState = {
             entities: {
-                users: { 
+                users: {
                     [window.currentUser.id]: window.currentUser 
-                }
+                } 
             },
             session: {
                 id: window.currentUser.id
             }
         }
     };
+
     const store = configureStore(preloadedState);
-
-    window.getState = store.getState;
-    window.dispath = store.dispatch;
-
     ReactDOM.render(<Root store={store} />, root);
 })

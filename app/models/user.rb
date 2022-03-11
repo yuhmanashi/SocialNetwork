@@ -1,10 +1,26 @@
 class User < ApplicationRecord
-    validates :email, presence: true, uniqueness: true
-    validates :first_name, :last_name, :password_digest, :session_token, presence: true
+    validates :email, :session_token, presence: true, uniqueness: true
+    validates :first_name, :last_name, :password_digest, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true
 
     attr_reader :password
     after_initialize :ensure_session_token
+
+    has_many :friends,
+        foreign_key: :user_id,
+        class_name: :Friend
+
+    has_many :friended,
+        foreign_key: :friend_id,
+        class_name: :Friend
+
+    has_many :posts,
+        foreign_key: :author_id,
+        class_name: :Post
+    
+    has_many :comments,
+        foreign_key: :author_id,
+        class_name: :Comment
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

@@ -1,0 +1,122 @@
+.comments {
+    border-radius: 10px;
+}
+
+.comments > * > * {
+    background-color: white;
+}
+
+.commentcontainer {
+
+    .comment-items {
+        margin-bottom: 10px;
+        background: white;
+        align-self: flex-start;
+
+        .comment-body {
+            display: flex;
+            background-color: white;
+            margin-bottom: 10px;
+
+            .otherprofile-placeholder {
+                padding: 10px;
+                margin-top: 2px;
+                background: white;
+                padding-left: 0;
+
+                .fa-circle-user {
+                    font-size: xx-large;
+                    color: #659de6;
+                }
+            }
+
+            .comment-box {
+                padding: 10px;
+                border-radius: 15px;
+                
+                .head {
+                    padding: 0;
+                }
+
+                .head .name {
+                    font-weight: bold;
+                    font-size: 13px;
+                }
+            }
+
+            .dropdown {
+                background: white;
+                align-self: center;
+                
+                .dropbutton {
+                    background: white;
+                    border: none;
+                    padding: 10px;
+                    cursor: pointer;
+            
+                    * {
+                        background: white;
+                        border-radius: 15px;
+                        padding: 5px;
+                    }
+
+                    .fa-ellipsis:hover {
+                        background: rgb(238, 238, 238);
+                    }
+                }
+
+                .dropdown-content {
+                    border-radius: 10px;
+                    padding: 5px;
+
+                    * {
+                        margin: 2px;
+                        background-color: transparent;
+                        cursor: pointer;
+                    }
+                } 
+            }
+        }
+    
+        .likereplydate {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            background-color: white;
+            margin-top: 5px;
+            align-self: center;
+        }
+    
+        .likereplydate > * {
+            background-color: white;
+            margin-left: 10px;
+        }
+    }
+}
+
+.commentform {
+    display: flex;
+
+    .userprofile-placeholder {
+        padding: 10px;
+        margin-top: 3px;
+        background: white;
+        padding-left: 0;
+
+        .fa-circle-user {
+            font-size: xx-large;
+            color: rgb(214, 214, 214);
+        }
+    }
+
+    form {
+        align-self: center;
+
+        input {
+            border: none;
+            border-radius: 15px;
+            padding: 8px;
+            width: 510px
+        }
+    }
+}
