@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 json.extract! user, :id, :first_name, :last_name, :email, :biography, :birthday
 
 json.posts do 
@@ -15,3 +16,6 @@ json.friends do
         end
     end
 end
+=======
+json.extract! user, :id, :first_name, :last_name, :email
+>>>>>>> main

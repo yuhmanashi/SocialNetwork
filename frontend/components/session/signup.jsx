@@ -58,6 +58,7 @@ class SignUpForm extends React.Component {
                     <div onClick={this.props.closeModal} className="close-x">X</div>
                 </div>
 
+<<<<<<< HEAD
                 <div className="signup-errors">
                         <ul>
                             {
@@ -66,6 +67,43 @@ class SignUpForm extends React.Component {
                                 ))
                             }
                         </ul>
+=======
+                    <form>
+                        <label>
+                            First Name
+                            <input 
+                                type="text" 
+                                value={ first_name }
+                                onChange={this.update('first_name')}
+                            />
+                        </label>
+                        <label>
+                            Last Name
+                            <input 
+                                type="text" 
+                                value={ last_name }
+                                onChange={this.update('last_name')}
+                            />
+                        </label>
+                        <label>
+                            Email
+                            <input 
+                                type="text" 
+                                value={ email }
+                                onChange={this.update('email')}
+                            />
+                        </label>
+                        <label>
+                            Password
+                            <input 
+                                type="password" 
+                                value={ password }
+                                onChange={this.update('password')}
+                            />
+                        </label>
+                        <button onClick={this.handleSubmit}>Sign Up</button>
+                    </form>
+>>>>>>> main
                 </div>
 
                 <form>
