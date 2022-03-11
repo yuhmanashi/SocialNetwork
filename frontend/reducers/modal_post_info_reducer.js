@@ -1,6 +1,6 @@
 import { GIVE_POST_ID } from '../actions/modal_info_actions';
 
-const ModalInfoReducer = (state = null, action) => {
+const ModalPostInfoReducer = (state = null, action) => {
     Object.freeze(state);
 
     switch (action.type) {
@@ -11,4 +11,4 @@ const ModalInfoReducer = (state = null, action) => {
     }
 }
 
-export default ModalInfoReducer;
+export default ModalPostInfoReducer;

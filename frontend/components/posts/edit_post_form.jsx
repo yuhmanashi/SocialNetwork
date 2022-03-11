@@ -5,8 +5,6 @@ class EditPostForm extends React.Component {
   render() {
     const { action, formType, post, closeModal } = this.props;
 
-    // Hint: The post will not exist on the first render - what do we need to do
-    // to get it?
     if (!post) return null;
     return (
       <PostForm

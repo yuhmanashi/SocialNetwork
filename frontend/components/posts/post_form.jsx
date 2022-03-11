@@ -20,7 +20,10 @@ class PostForm extends React.Component {
   render() {
     return (
       <div>
-        <h3>{this.props.formType}</h3>
+        <div className='form-header'>
+          <h3>{this.props.formType}</h3>
+          <div onClick={this.props.closeModal} className="close-x">X</div>
+        </div>
         <form onSubmit={this.handleSubmit}>
             <input
               className="createpost"

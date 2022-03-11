@@ -2,11 +2,17 @@
 <html>
   <head>
     <title>Socialnetwork</title>
+    <link rel="shortcut icon" href="../../assets/navbar/s-logo.png">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/817ae3b993.js" crossorigin="anonymous"></script>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <meta property="og:title" content="SocialNetwork"/>
+    <meta property="og:image:secure" content="https://www.clipartmax.com/png/full/194-1940897_download-logo-with-white-s-in-blue-circle.png"/>
+    <meta property="og:url" content="http://socialnetwork0.herokuapp.com/#/" />
+
     <% if current_user %>
       <script>
         window.currentUser = {

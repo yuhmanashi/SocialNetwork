@@ -8,6 +8,12 @@
 @posts.each do |post|
     json.set! post.id do
       json.partial! 'post', post: post
-      json.extract! post.user, :first_name, :last_name
+      # json.extract! post.user, :first_name, :last_name
     end
 end
+
+# json.extract! post.comments.each do |comment|
+#   json.set! comment.id do
+#     json.extract comment, :body
+#   end
+# end

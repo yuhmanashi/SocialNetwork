@@ -3,19 +3,22 @@ import * as UserUtil from '../util/user_util';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
 
-const receiveUsers = () => ({
+const receiveUsers = payload => {
+    return ({
     type: RECEIVE_USERS,
-})
+    payload
+})}
 
 const receiveUser = user => ({
     type: RECEIVE_USER,
     user
 })
 
-export const fetchUsers = () => dispatch => (
-    UserUtil.fetchUser()
-        .then(() => dispatch(receiveUsers()))
-)
+export const fetchUsers = () => dispatch => {
+    return (
+    UserUtil.fetchUsers()
+        .then(users => dispatch(receiveUsers(users)))
+)}
 
 export const fetchUser = userId => dispatch => (
     UserUtil.fetchUser(userId)

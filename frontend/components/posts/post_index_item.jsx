@@ -1,4 +1,6 @@
 import React from 'react';
+import CommentIndexContainer from '../comments/comment_index_container';
+import CreateCommentFormContainer from '../comments/create_comment_form_container'
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -8,13 +10,10 @@ class PostIndexItem extends React.Component {
     }
 
     openModal() {
-        console.log(this.props)
-        this.props.givePostId(this.props.post.id);
-        this.props.openModal('editpost');
-    }
-    
-    handleDropdown(){
-        document.getElementById("dropdown-content").classList.toggle("show");
+        if (this.props.user_id === this.props.post.author_id) {
+            this.props.givePostId(this.props.post.id);
+            this.props.openModal('editpost');
+        }
     }
     
     //lets just do hover for now and if theres time do click
@@ -42,11 +41,25 @@ class PostIndexItem extends React.Component {
     }
 
     render(){
+        const { post, allUsers } = this.props;
+        const user = allUsers[post.author_id]
+        
+        if (!user) return null;
         return(
             <li className="postitems">
                 <div className="head">
-                    <div className="name">
-                        {this.props.post.first_name} {this.props.post.last_name}
+                    <div className="header">
+                        <div className='userprofile-placeholder'>
+                            <i className="fa-solid fa-circle-user fa-xl"></i>
+                        </div>
+                        <div className='namedate'>
+                            <div className="name">
+                                {user.first_name} {user.last_name}
+                            </div>
+                            <div className="datetime">
+                                {this.handleDate()}
+                            </div>
+                        </div>
                     </div>
                     <div className="dropdown">
                         <button className="dropbutton"><i className="fa-solid fa-ellipsis"></i></button>
@@ -56,11 +69,8 @@ class PostIndexItem extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="datetime">
-                    {this.handleDate()}
-                </div>
                 <div className="body">
-                    <p>{this.props.post.body}</p>
+                    <p>{post.body}</p>
                 </div>
                 <hr className='hr-top'/>
                 <div className="likecomment">
@@ -69,9 +79,9 @@ class PostIndexItem extends React.Component {
                 </div>
                 <hr className="hr-bottom" />
                 <div className="comments">
-                    comments go here
+                    <CommentIndexContainer  postId={post.id}/>
+                    <CreateCommentFormContainer postId={post.id}/>
                 </div>
-                <input type="text" className='comment' placeholder='Write a comment'/>
             </li>
         )
     }

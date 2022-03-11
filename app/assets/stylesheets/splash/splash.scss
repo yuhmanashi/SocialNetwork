@@ -1,5 +1,8 @@
 * {
     background: #f0f2f5;
+    input:focus {
+        outline: none;
+    }
 }
 
 .splash-page {
@@ -33,53 +36,39 @@
 
     p {
         font-size: 25px;
-        font-weight: 500;
         margin: 1px;
     }
 }
 
 .login-form {
-    position: relative;
-    border: 1.5px solid white;
-    background-color: white;
-    box-shadow: 0 0 10px #d9dbdd, 0 0 10px #d9dbdd, 0 0 10px #d9dbdd;
-    top: 200px;
-    height: 340px;
-    width: 400px;
-    border-radius: 10px;
-    padding: 3px;
-    margin-left: 50px;
     display: flex;
     align-items: center;
+    position: relative;
+    background-color: white;
+    top: 200px;
+    height: 350px;
+    width: 400px;
+    padding: 3px;
+    margin-left: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #d9dbdd, 0 0 10px #d9dbdd, 0 0 10px #d9dbdd;
 
     * {
         background-color: white;
     }
 
-    input {
-        border: 1.5px solid #d4d4d4;
-        font-size: 17px;
-        padding: 15px;
-        width: 350px;
-        margin: 7px;
-        border-radius: 5px;
-    }
-
-    input:focus::placeholder {
-        color: #c4c4c4;
-    }
-
     .login-button {
         background-color: #1877f2;
-        border-radius: 5px;
-        font-size: 20px;
-        font-weight: 600;
-        color: white;
-        padding: 10px;
+        border-radius: 15px;
         width: 360px;
+        padding: 10px;
         margin: 10px;
         margin-top: 15px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
         text-align: center;
+        cursor: pointer;
     }
 
     .login-button:hover {
@@ -87,34 +76,28 @@
     }
 
     .demo {
-        font-display: white;
+        color: #1475f3;
         font-size: 14px;
         font-weight: bold;
-        padding: 10px;
-        width: 70px;
-        margin: auto;
-        margin-top: 10px;
-        padding: 0;
+        font-display: white;
         text-align: center;
+        padding: 0;
+        margin: 0 auto;
+        margin-top: 10px;
         cursor: pointer;
-        color: #1475f3;
-    }
-
-    .demo:hover {
-        text-decoration: underline;
     }
 
     .signup-button {
         background-color: #42b72a;
-        border-radius: 10px;
-        font-size: 18px;
-        font-weight: 600;
+        border-radius: 15px;
         color: white;
-        padding: 10px;
-        width: 200px;
-        margin: auto;
-        margin-top: 30px;
+        font-size: 18px;
+        font-weight: bold;
         text-align: center;
+        padding: 10px;
+        margin: 0 auto;
+        margin-top: 30px;
+        width: 200px;
         cursor: pointer;
     }
 
@@ -122,10 +105,23 @@
         background-color: #44a537;
     }
 
+    input {
+        border: 1.5px solid #d4d4d4;
+        border-radius: 5px;
+        padding: 15px;
+        margin: 7px;
+        width: 350px;
+        font-size: 17px;
+    }
+
+    input:focus::placeholder {
+        color: #c4c4c4;
+    }
+
     .login-error {
+        color: red;
         margin-left: 50px;
         font-size: 14px;
-        color: red;
     }
 
     .hr-top {
@@ -137,44 +133,13 @@
     }
 }
 
-.modal-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(230, 230, 230, 0.7);
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    
-    .close-x {
-        position: absolute;
-        background-color: white;
-        cursor: pointer;
-        top: 10px;
-        right: 17px;
-        font-size: 25px;
-        font-weight: 900;
-    }
-
-    .modal-child {
-        position: relative;
-        bottom: 300px;
-        right: 200px;
-    }
- }
-
 .signup-form {
     position: absolute;
-    border: 1.5px solid white;
     background-color: white;
+    border-radius: 10px;
     box-shadow: 0 0 5px #cfcfcf, 0 0 10px #f0f0f0;
     height: 510px;
     width: 430px;
-    border-radius: 10px;
     padding: 2px;
     display: flex;
     justify-content: space-evenly;
@@ -190,14 +155,13 @@
         margin-bottom: 0;
 
         h2 {
-            font-size: 35px;
-            font-weight: 700;
             margin: 0;
             margin-left: 20px;
+            font-size: 35px;
+            font-weight: bold;
         }
 
         p {
-            margin-top: 3px;
             margin-left: 20px;
         }
     }
@@ -205,27 +169,27 @@
     input {
         background-color: rgba(197, 197, 197, 0.3);
         border: 1.5px solid #f0f0f0;
-        font-size: 20px;
+        border-radius: 15px;
         padding: 10px;
         width: 370px;
         margin: 5px;
         margin-left: 14px;
-        margin-bottom: 20px;
         margin-top: 0;
-        border-radius: 10px;
+        margin-bottom: 20px;
+        font-size: 20px;
     }
 
     .signup-button {
         background-color: #4bb93c;
-        border-radius: 10px;
-        font-size: 20px;
-        font-weight: 600;
+        border-radius: 15px;
         color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
         padding: 10px;
         width: 200px;
         margin-top: 5px;
         margin-left: 115px;
-        text-align: center;
     }
 
     .signup-button:hover {
@@ -233,10 +197,9 @@
     }
 
     .hr-top {
-        margin-top: 15px;
-        width: 432px;
         background-color: rgb(219, 230, 221);
         border: none;
+        width: 432px;
         height: 1px;
     }
 
@@ -245,15 +208,34 @@
     }
 
     .signup-errors {
-        font-size: 14px;
         color: red;
+        font-size: 14px;
     }
 }
 
 .footer {
+    background-color: white;
     position: relative;
+    top: 410px;
     height: 250px;
     width: 100%;
     top: 410px;
-    background-color: white;
+}
+
+.signup .modal-child {
+    .modal-child {
+        position: relative;
+        bottom: 300px;
+        right: 200px;
+
+        .close-x {
+            position: absolute;
+            background-color: white;
+            cursor: pointer;
+            top: 10px;
+            right: 17px;
+            font-size: 25px;
+            font-weight: 900;
+        }
+    }
 }

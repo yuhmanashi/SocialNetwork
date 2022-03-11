@@ -37,28 +37,37 @@ class NavBar extends React.Component {
 
     return (
       <div className="nav-bar">
+        {/* <UserContainer /> */}
         <div className ='right'>
-          <img className='logo' src="../../../assets/navbar/s-logo.png"  />
+          <img className='logo' src="../../../assets/s-logo.png"  />
           {/* <br/>
           <input type="text" placeholder='Search'/> */}
         </div>
         <div className="center">
           <div onClick={this.handleHome} className="home-icon">
-            <i className="fa-solid fa-house fa-xl"></i>
+            <Link to='/home/'>
+              <i className="fa-solid fa-house fa-xl"></i>
+            </Link>
           </div>
           <div onClick={this.handleFriends} className="friends-icon">
-            <i className="fa-solid fa-user-group fa-xl"></i>
+            <Link to='/friends/'>
+              <i className="fa-solid fa-user-group fa-xl"></i>
+            </Link>
           </div>
-          <div onClick={this.handleGroups} className="group-icon">
-            <i className="fa-solid fa-users fa-xl"></i>
+          <div onClick={this.handleProfile} className="profile-icon">
+            <Link to={`/profile/${userId}`}>
+              <i className="fa-solid fa-user fa-xl"></i>
+            </Link>
           </div>
         </div>
         <div className="left"> 
-          <div onClick={this.handleProfile} className="profile-icon">
-            <i className="fa-solid fa-circle-user fa-xl"></i>
-          </div>
+          {/* <div onClick={this.handleProfile} className="profile-icon">
+            <Link to={`/profile/${userId}`}>
+              <i className="fa-solid fa-circle-user fa-xl"></i>
+            </Link>
+          </div> */}
           <div onClick={this.logout} className="logout">
-            <i className="fa-solid fa-arrow-right-from-bracket fa-xl"></i>
+              <i className="fa-solid fa-arrow-right-from-bracket fa-xl"></i>
           </div>
         </div>
       </div>
