@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
 import Home from './home'
-import { getUser } from '../../actions/user_actions';
+import { fetchUser } from '../../actions/user_actions';
 import { logOut } from '../../actions/session_actions';
 
 const mSTP = state => ({
-    user: state.session.user,
+    currentUserId: state.session.id,
+    users: state.entities.users
 })
 
 const mDTP = dispatch => ({
-    getUser: userId => dispatch(getUser(userId)),
+    fetchUser: userId => dispatch(fetchUser(userId)),
     logOut: () => dispatch(logOut())
 })
 

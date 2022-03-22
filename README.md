@@ -19,7 +19,7 @@ Users can sign in and sign up. On the splash page there is an initial sign in fo
 
 --------------------------------------------------------------------------------
 
-Users are able to make posts and comment on posts. All posts will show up on the home page for everyone to see. With the use of react and some javascript I was able to nest a post's respective comments so all posts will show their respective comments. 
+Users are able to make posts and comment on posts. All posts will show up on the home page for everyone to see. With the use of react and some javascript I was able to nest a post's respective comments so all posts will show their respective comments. A challenge was getting the right state and the right information from the state. The problem I had was that I nested slices of slate into other states. I eventually put all the entities at the same level and was able to have easy access to information I wanted from there.
 
 ![jbuilder1](./app/assets/images/readme/jbuilder1.png)
 ![jbuilder2](./app/assets/images/readme/jbuilder2.png)
