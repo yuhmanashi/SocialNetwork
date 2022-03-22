@@ -20,7 +20,7 @@ class NavBar extends React.Component {
   }
 
   handleFriends(){
-    console.log('friends')
+    console.log(this.props.friends)
   }
 
   handleGroups(){
@@ -32,7 +32,7 @@ class NavBar extends React.Component {
   }
 
   render(){
-    const { userId, entities } = this.props
+    const { userId } = this.props
     // const user = users.userId
 
     return (

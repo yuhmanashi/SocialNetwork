@@ -38,7 +38,7 @@ class FriendIndexItems extends React.Component {
                 <li className="friend-item">
                         <div className="profilepic">
                             <div className="userprofile-placeholder">
-                                <i class="fa-solid fa-user-large fa-xl"></i>
+                                <i className="fa-solid fa-user-large fa-xl"></i>
                             </div>
                         </div>
                         <div className='body'>
