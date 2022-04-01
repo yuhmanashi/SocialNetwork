@@ -93,12 +93,12 @@
                                 margin: 10px;
                             }
     
-                            .Delete {
+                            .Delete, .Cancel {
                                 border-radius: 10px;
                                 background: #1877f2;
                             }
         
-                            .Delete:hover {
+                            .Delete:hover, .Cancel:hover {
                                 background: #066cf3;
                             }
         

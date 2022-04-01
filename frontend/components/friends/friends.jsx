@@ -12,8 +12,14 @@ class Friends extends React.Component {
         
         if (!friends) return null;
 
-        //only shows who user has friended, not user as a friendee
-        let userFriends = friends.filter(friend => friend.user_id === userId)
+        let userFriends = friends.filter(friend => friend.user_id === userId && friend.status === 'true');
+        console.log(userFriends)
+    
+        let requestSent = friends.filter(friend => friend.user_id === userId && friend.status === 'pending');
+        console.log(requestSent)
+        
+        let requested = friends.filter(friend => friend.friend_id === userId && friend.status === 'pending')
+
         let friendIds = [];
         
         userFriends.forEach(friend => {
@@ -54,6 +60,40 @@ class Friends extends React.Component {
                             </ul>
                         </div>
                         <hr className="hr-top"/>
+                        <h3>Friend Requests</h3>
+                        <div>
+                            <ul className="friends">
+                                {
+                                    requested.map((friend, index) => (
+                                        <FriendIndexItems 
+                                            user={currentUser}
+                                            friend={friend}
+                                            userId={userId} 
+                                            action={deleteFriend}
+                                            type="Cancel Request"
+                                            key={index}
+                                        />
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                        <h3>Request Sent</h3>
+                        <div>
+                            <ul className="friends">
+                                {
+                                    requestSent.map((friend, index) => (
+                                        <FriendIndexItems 
+                                            user={currentUser}
+                                            friend={friend}
+                                            userId={userId} 
+                                            action={deleteFriend}
+                                            type="Cancel Request"
+                                            key={index}
+                                        />
+                                    ))
+                                }
+                            </ul>
+                        </div>
                         <h3>People You May Know</h3>
                         <div className="recommended-friends">
                             <ul className='friends'>

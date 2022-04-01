@@ -3,7 +3,6 @@ import React from 'react';
 class FriendIndexItems extends React.Component {
     constructor(props){
         super(props);
-        this.handleAction = this.handleAction.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -11,8 +10,7 @@ class FriendIndexItems extends React.Component {
         e.preventDefault();
         const { friend, action, type, userId } = this.props;
         let friendObj = {'user_id': userId, 'friend_id': friend.id}
-        
-        if (type === 'Delete Friend'){
+        if (type === 'Delete Friend' || 'Cancel Request'){
             action(friend.id)
         } else {
             action(friendObj)
@@ -23,13 +21,13 @@ class FriendIndexItems extends React.Component {
         return () => this.setState({ 'friend_id': friend_id });
     }
 
-    handleAction(user){
-        if (this.props.type === 'deletefriend'){
-            this.props.action(user.id)
-        } else {
-            this.update(user.id).then(this.handleSubmit())
-        }
-    }
+    // handleAction(user){
+    //     if (this.props.type === 'deletefriend'){
+    //         this.props.action(user.id)
+    //     } else {
+    //         this.update(user.id).then(this.handleSubmit())
+    //     }
+    // }
 
     render(){
         const { friend, type } = this.props;
