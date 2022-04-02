@@ -93,21 +93,21 @@
                                 margin: 10px;
                             }
     
-                            .Delete {
+                            .Delete, .Cancel, .Reject {
                                 border-radius: 10px;
                                 background: #1877f2;
                             }
         
-                            .Delete:hover {
+                            .Delete:hover, .Cancel:hover, .Reject:hover {
                                 background: #066cf3;
                             }
         
-                            .Add {
+                            .Add, .Accept {
                                 border-radius: 10px;
                                 background: #47ca3b;
                             }
         
-                            .Add:hover {
+                            .Add:hover, .Accept:hover {
                                 background: #07c22f;
                             }
                         }

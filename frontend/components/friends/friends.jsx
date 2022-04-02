@@ -8,16 +8,26 @@ class Friends extends React.Component {
     }
 
     render(){
-        const { allUsers, currentUser, createFriend, deleteFriend, userId, friends } = this.props;
+        const { allUsers, currentUser, createFriend, deleteFriend, updateFriend, userId, friends } = this.props;
         
         if (!friends) return null;
 
-        //only shows who user has friended, not user as a friendee
-        let userFriends = friends.filter(friend => friend.user_id === userId)
+        let userFriends = friends.filter(friend => friend.user_id === userId && friend.status === 'true');
+        
+        let userFriendships = friends.filter(friend => friend.friend_id === userId)
+
+        let requestSent = friends.filter(friend => friend.user_id === userId && friend.status === 'sent');
+        
+        let requested = friends.filter(friend => friend.user_id === userId && friend.status === 'requested');
+
         let friendIds = [];
         
         userFriends.forEach(friend => {
             friendIds.push(friend.friend_id)
+        })
+
+        userFriendships.forEach(friendship => {
+            friendIds.push(friendship.user_id)
         })
         
         let notFriends = allUsers.filter(user => 
@@ -43,6 +53,7 @@ class Friends extends React.Component {
                                     userFriends.map((friend, index) => (
                                         <FriendIndexItems 
                                             user={currentUser}
+                                            userFriendships={userFriendships}
                                             friend={friend}
                                             userId={userId} 
                                             action={deleteFriend}
@@ -54,6 +65,43 @@ class Friends extends React.Component {
                             </ul>
                         </div>
                         <hr className="hr-top"/>
+                        <h3>Friend Requests</h3>
+                        <div>
+                            <ul className="friends">
+                                {
+                                    requested.map((friend, index) => (
+                                        <FriendIndexItems 
+                                            user={currentUser}
+                                            userFriendships={userFriendships}
+                                            friend={friend}
+                                            userId={userId} 
+                                            deleteFriend={deleteFriend}
+                                            updateFriend={updateFriend}
+                                            type="Requested"
+                                            key={index}
+                                        />
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                        <h3>Request Sent</h3>
+                        <div>
+                            <ul className="friends">
+                                {
+                                    requestSent.map((friend, index) => (
+                                        <FriendIndexItems 
+                                            user={currentUser}
+                                            userFriendships={userFriendships}
+                                            friend={friend}
+                                            userId={userId} 
+                                            action={deleteFriend}
+                                            type="Cancel Request"
+                                            key={index}
+                                        />
+                                    ))
+                                }
+                            </ul>
+                        </div>
                         <h3>People You May Know</h3>
                         <div className="recommended-friends">
                             <ul className='friends'>
