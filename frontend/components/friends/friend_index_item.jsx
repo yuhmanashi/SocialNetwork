@@ -11,11 +11,12 @@ class FriendIndexItems extends React.Component {
 
     handleClick(e) {
         e.preventDefault();
-        const { friend, action, type, userId } = this.props;
+        const { friend, action, type, userId, userFriendships } = this.props;
         let requestSent = {'user_id': userId, 'friend_id': friend.id, 'status': 'sent'}
         let friendRequest = {'user_id': friend.id, 'friend_id': userId, 'status': 'requested'}
         if (type === 'Delete Friend'){
-            action(friend.id)
+            let friendship = userFriendships.filter(requested => requested.friend_id === userId && requested.user_id === friend.friend_id)
+            deleteFriend(friend.id).then(deleteFriend(friendship[0].id));
         } else {
             action(requestSent).then(action(friendRequest))
         }
@@ -27,13 +28,14 @@ class FriendIndexItems extends React.Component {
         let friendship = userFriendships.filter(requested => requested.friend_id === userId && requested.user_id === friend.friend_id)
         friendship[0].status = 'true';
         friend.status = 'true';
-        updateFriend(friend).then(updateFriend(friendship[0]))
+        updateFriend(friend).then(updateFriend(friendship[0]));
     }
 
     handleReject(e) {
         e.preventDefault();
-        const { friend, deleteFriend, type, userId } = this.props;
-        console.log(friend)
+        const { friend, deleteFriend, type, userId, userFriendships } = this.props;
+        let friendship = userFriendships.filter(requested => requested.friend_id === userId && requested.user_id === friend.friend_id)
+        deleteFriend(friend.id).then(deleteFriend(friendship[0].id));
     }
 
     update(friend_id) {

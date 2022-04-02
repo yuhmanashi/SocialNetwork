@@ -49,6 +49,7 @@ class Friends extends React.Component {
                                     userFriends.map((friend, index) => (
                                         <FriendIndexItems 
                                             user={currentUser}
+                                            userFriendships={userFriendships}
                                             friend={friend}
                                             userId={userId} 
                                             action={deleteFriend}
