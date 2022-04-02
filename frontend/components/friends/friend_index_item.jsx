@@ -6,6 +6,7 @@ class FriendIndexItems extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.handleAccept = this.handleAccept.bind(this);
         this.handleReject = this.handleReject.bind(this);
+        this.handleFriendAction = this.handleFriendAction.bind(this);
     }
 
     handleClick(e) {
@@ -47,7 +48,8 @@ class FriendIndexItems extends React.Component {
         if (type === 'Requested') {
             return(
                 <div className="friendaction">
-                    <div onClick={this.handleClick} className={`${type}`}>{type}</div>
+                    <div onClick={this.handleAccept} className='Accept'>Accept Friend</div>
+                    <div onClick={this.handleReject} className='Reject'>Reject</div>
                 </div>
             )
         } else {
@@ -72,9 +74,7 @@ class FriendIndexItems extends React.Component {
                             <div className="name">
                                 {friend.first_name} {friend.last_name}
                             </div>
-                            <div className="friendaction">
-                                <div onClick={this.handleClick} className={`${type}`}>{type}</div>
-                            </div>
+                            {this.handleFriendAction()}
                         </div>
                 </li>
             )
