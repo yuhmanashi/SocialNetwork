@@ -100,6 +100,7 @@
         
                             .Delete:hover, .Cancel:hover, .Reject:hover {
                                 background: #066cf3;
+                                cursor: pointer;
                             }
         
                             .Add, .Accept {
@@ -109,6 +110,7 @@
         
                             .Add:hover, .Accept:hover {
                                 background: #07c22f;
+                                cursor: pointer;
                             }
                         }
                     }
