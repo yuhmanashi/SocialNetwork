@@ -23,12 +23,17 @@ class FriendIndexItems extends React.Component {
 
     handleAccept(e) {
         e.preventDefault();
-        const { friend, action, type, userId } = this.props;
+        const { friend, updateFriend, type, userId, userFriendships } = this.props;
+        let friendship = userFriendships.filter(requested => requested.friend_id === userId && requested.user_id === friend.friend_id)
+        friendship[0].status = 'true';
+        friend.status = 'true';
+        updateFriend(friend).then(updateFriend(friendship[0]))
     }
 
     handleReject(e) {
         e.preventDefault();
-        const { friend, action, type, userId } = this.props;
+        const { friend, deleteFriend, type, userId } = this.props;
+        console.log(friend)
     }
 
     update(friend_id) {

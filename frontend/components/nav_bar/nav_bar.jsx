@@ -20,7 +20,7 @@ class NavBar extends React.Component {
   }
 
   handleFriends(){
-    console.log(this.props.friends)
+    console.log('friends')
   }
 
   handleGroups(){

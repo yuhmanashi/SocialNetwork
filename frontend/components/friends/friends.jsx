@@ -8,12 +8,14 @@ class Friends extends React.Component {
     }
 
     render(){
-        const { allUsers, currentUser, createFriend, deleteFriend, userId, friends } = this.props;
+        const { allUsers, currentUser, createFriend, deleteFriend, updateFriend, userId, friends } = this.props;
         
         if (!friends) return null;
 
         let userFriends = friends.filter(friend => friend.user_id === userId && friend.status === 'true');
-    
+        
+        let userFriendships = friends.filter(friend => friend.friend_id === userId)
+
         let requestSent = friends.filter(friend => friend.user_id === userId && friend.status === 'sent');
         
         let requested = friends.filter(friend => friend.user_id === userId && friend.status === 'requested');
@@ -65,9 +67,11 @@ class Friends extends React.Component {
                                     requested.map((friend, index) => (
                                         <FriendIndexItems 
                                             user={currentUser}
+                                            userFriendships={userFriendships}
                                             friend={friend}
                                             userId={userId} 
-                                            action={deleteFriend}
+                                            deleteFriend={deleteFriend}
+                                            updateFriend={updateFriend}
                                             type="Requested"
                                             key={index}
                                         />

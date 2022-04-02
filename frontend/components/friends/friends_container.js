@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Friends from './friends'
-import { fetchFriends, createFriend, deleteFriend } from '../../actions/friend_actions'
+import { fetchFriends, createFriend, deleteFriend, updateFriend } from '../../actions/friend_actions'
 import { fetchUsers } from '../../actions/user_actions'
 import { withRouter } from 'react-router-dom';
 
@@ -16,7 +16,8 @@ const mDTP = dispatch => ({
     fetchUsers: () => dispatch(fetchUsers()), 
     fetchFriends: () => dispatch(fetchFriends()),
     createFriend: friend => dispatch(createFriend(friend)),
-    deleteFriend: friendId => dispatch(deleteFriend(friendId))
+    deleteFriend: friendId => dispatch(deleteFriend(friendId)),
+    updateFriend: friend => dispatch(updateFriend(friend))
 })
 
 export default withRouter(connect(mSTP, mDTP)(Friends));
