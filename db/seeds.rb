@@ -30,8 +30,9 @@ comment3 = Comment.create!(body: "That changed real quick", post_id: post2.id, a
 comment4 = Comment.create!(body: "Lol", post_id: post3.id, author_id: user1.id)
 
 friend1 = Friend.create!(user_id: user1.id, friend_id: user2.id, status: 'true')
-friend2 = Friend.create!(user_id: user1.id, friend_id: user3.id, status: 'pending')
-friend3 = Friend.create!(user_id: user2.id, friend_id: user1.id, status: 'true')
+friend2 = Friend.create!(user_id: user2.id, friend_id: user1.id, status: 'true')
+friend3 = Friend.create!(user_id: user1.id, friend_id: user3.id, status: 'sent')
+friend4 = Friend.create!(user_id: user3.id, friend_id: user1.id, status: 'requested')
 
 #Demo seeds
 post0 = Post.create!(body: "Looking for friends", author_id: demo.id)
@@ -39,4 +40,7 @@ comment0 = Comment.create!(body: "Please", post_id: post0.id, author_id: demo.id
 comment00 = Comment.create!(body: "I am your friend", post_id: post0.id, author_id: user1.id)
 friend0 = Friend.create!(user_id: demo.id, friend_id: user1.id, status: 'true')
 friend00 = Friend.create!(user_id: user1.id, friend_id: demo.id, status: 'true')
-friend000 = Friend.create!(user_id: demo.id, friend_id: user2.id, status: 'pending')
+friend000 = Friend.create!(user_id: demo.id, friend_id: user2.id, status: 'sent')
+friend0000 = Friend.create!(user_id: user2.id, friend_id: demo.id, status: 'requested')
+friend00000 = Friend.create!(user_id: demo.id, friend_id: user3.id, status: 'requested')
+friend000000 = Friend.create!(user_id: user3.id, friend_id: demo.id, status: 'sent')

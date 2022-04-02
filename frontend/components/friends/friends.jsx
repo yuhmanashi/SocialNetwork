@@ -13,12 +13,10 @@ class Friends extends React.Component {
         if (!friends) return null;
 
         let userFriends = friends.filter(friend => friend.user_id === userId && friend.status === 'true');
-        console.log(userFriends)
     
-        let requestSent = friends.filter(friend => friend.user_id === userId && friend.status === 'pending');
-        console.log(requestSent)
+        let requestSent = friends.filter(friend => friend.user_id === userId && friend.status === 'sent');
         
-        let requested = friends.filter(friend => friend.friend_id === userId && friend.status === 'pending')
+        let requested = friends.filter(friend => friend.user_id === userId && friend.status === 'requested');
 
         let friendIds = [];
         
@@ -70,7 +68,7 @@ class Friends extends React.Component {
                                             friend={friend}
                                             userId={userId} 
                                             action={deleteFriend}
-                                            type="Cancel Request"
+                                            type="Requested"
                                             key={index}
                                         />
                                     ))
