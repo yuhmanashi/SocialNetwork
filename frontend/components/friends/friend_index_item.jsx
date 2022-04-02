@@ -14,10 +14,12 @@ class FriendIndexItems extends React.Component {
         const { friend, action, type, userId, userFriendships } = this.props;
         let requestSent = {'user_id': userId, 'friend_id': friend.id, 'status': 'sent'}
         let friendRequest = {'user_id': friend.id, 'friend_id': userId, 'status': 'requested'}
-        if (type === 'Delete Friend'){
+        if (userFriendships){
+            console.log('delete')
             let friendship = userFriendships.filter(requested => requested.friend_id === userId && requested.user_id === friend.friend_id)
-            deleteFriend(friend.id).then(deleteFriend(friendship[0].id));
+            action(friend.id).then(action(friendship[0].id));
         } else {
+            console.log('create')
             action(requestSent).then(action(friendRequest))
         }
     }

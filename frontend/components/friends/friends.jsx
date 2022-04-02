@@ -25,6 +25,10 @@ class Friends extends React.Component {
         userFriends.forEach(friend => {
             friendIds.push(friend.friend_id)
         })
+
+        userFriendships.forEach(friendship => {
+            friendIds.push(friendship.user_id)
+        })
         
         let notFriends = allUsers.filter(user => 
             !friendIds.includes(user.id) && user.id != userId
@@ -87,6 +91,7 @@ class Friends extends React.Component {
                                     requestSent.map((friend, index) => (
                                         <FriendIndexItems 
                                             user={currentUser}
+                                            userFriendships={userFriendships}
                                             friend={friend}
                                             userId={userId} 
                                             action={deleteFriend}
