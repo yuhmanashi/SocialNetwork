@@ -3,11 +3,25 @@ import NavBarContainer from "../nav_bar/nav_bar_container";
 import PostIndexContainer from '../posts/post_index_container';
 
 class Profile extends React.Component {
+    constructor(props){
+        super(props);
+        this.openModal = this.openModal.bind(this)
+    }
+    
+    componentDidMount(){
+        this.props.fetchUser(this.props.userId)
+    }
+
+    openModal(){
+        this.props.openModal('editprofile')
+    }
+
     render(){
         if (!this.props) return null;
         const { users, userId, posts, friends } = this.props;
         const currentUser = users[userId];
-        
+        console.log(currentUser);
+
         let userPosts = [];
         
         posts.forEach(post => {
@@ -40,7 +54,12 @@ class Profile extends React.Component {
                     <div className="profile-body">
                         <div className="left">
                             <div className="intro">
-                                <h3>Intro</h3>
+                                <div className="head">
+                                    <h3>Intro</h3>
+                                    <div className="editbtn" onClick={this.openModal}>
+                                        Edit
+                                    </div>
+                                </div>
                                 <div className="bio">
                                     <p>Bio</p>
                                     {currentUser.biography}

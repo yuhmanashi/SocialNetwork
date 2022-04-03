@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentFormContainer from '../comments/create_comment_form_container'
+import { Link } from 'react-router-dom';
 
 class PostIndexItem extends React.Component {
     constructor(props) {
@@ -54,7 +55,9 @@ class PostIndexItem extends React.Component {
                         </div>
                         <div className='namedate'>
                             <div className="name">
-                                {user.first_name} {user.last_name}
+                                <Link to={`/profile/${user.id}`}>
+                                    {user.first_name} {user.last_name}
+                                </Link>
                             </div>
                             <div className="datetime">
                                 {this.handleDate()}
