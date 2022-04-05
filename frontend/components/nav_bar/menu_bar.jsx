@@ -34,14 +34,14 @@ class MenuBar extends React.Component {
                     </a>
                 </div>
                 <div className='angellist'>
-                    <a href="https://github.com/yuhmanashi/SocialNetwork/" target="_blank">
+                    <a href="https://angel.co/u/yao-xu-3" target="_blank">
                         <img className="" src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/angellist-logo.png?raw=true" />
                         <div className="title">AngelList</div>
                     </a>
                 </div>
                 <div className="aboutme">
-                    <a href="https://github.com/yuhmanashi/SocialNetwork/" target="_blank">
-                        <img className="" src="" />
+                    <a className="me" href="https://github.com/yuhmanashi/SocialNetwork/" target="_blank">
+                        <i className="fa-solid fa-circle-user fa-xl"></i>
                         <div className="title">About Me</div>
                     </a>
                 </div>

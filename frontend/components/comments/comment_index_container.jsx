@@ -5,6 +5,7 @@ import { giveCommentId } from '../../actions/modal_info_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => ({
+  user: state.entities.users[state.session.id],
   comments: Object.values(state.entities.comments),
   user_id: state.session.id,
   post_id: ownProps.postId

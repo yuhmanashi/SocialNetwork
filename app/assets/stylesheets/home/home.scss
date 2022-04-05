@@ -47,7 +47,7 @@
                         text-decoration: none;
                         display: flex;
                         padding: 5px;
-                        margin-top: 5px;
+                        margin-top: 30px;
                         padding-left: 0;
 
                         .title {
@@ -56,10 +56,17 @@
                             font-weight: bold; 
                         }
                     }
-                }
 
-                .aboutme .title {
-                    margin-left: 9px;
+                    .me {
+                        margin-top: 40px;
+                        display: flex;
+                        align-items: center;
+
+                        .fa-circle-user {
+                            font-size: 40px;
+                            color: rgb(214, 214, 214);
+                        }
+                    }
                 }
                 
                 .linkedin .title {
@@ -67,11 +74,6 @@
                 }
 
                 div {
-                    img.slogo {
-                    height: 42px;
-                    width: 42px;
-                    }
-
                     img.glogo {
                         height: 40px;
                         width: 40px;

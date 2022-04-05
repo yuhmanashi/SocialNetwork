@@ -51,7 +51,9 @@ class PostIndexItem extends React.Component {
                 <div className="head">
                     <div className="header">
                         <div className='userprofile-placeholder'>
-                            <i className="fa-solid fa-circle-user fa-xl"></i>
+                            <Link to={`/profile/${user.id}`}>
+                                <i className="fa-solid fa-circle-user fa-xl"></i>
+                            </Link>
                         </div>
                         <div className='namedate'>
                             <div className="name">

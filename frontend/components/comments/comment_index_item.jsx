@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CommentIndexItem extends React.Component {
     constructor(props) {
@@ -46,13 +47,17 @@ class CommentIndexItem extends React.Component {
                 <div className="comment-items">
                     <div className="comment-body">
                         <div className="otherprofile-placeholder">
-                            <i className="fa-solid fa-circle-user fa-xl"></i>
+                            <Link to={`/profile/${this.props.comment.author_id}`}>
+                                <i className="fa-solid fa-circle-user fa-xl"></i>
+                            </Link>
                         </div>
                         <div className="comment-box">
                             <div className="head">
-                                <div className="name">
-                                    {this.props.comment.first_name} {this.props.comment.last_name}
-                                </div>
+                                <Link to={`/profile/${this.props.comment.author_id}`}>
+                                    <div className="name">
+                                        {this.props.comment.first_name} {this.props.comment.last_name}
+                                    </div>
+                                </Link>
                             </div>
                             <div className="comment">
                                 {this.props.comment.body}

@@ -46,11 +46,16 @@ class Home extends React.Component {
                             </div>
                             <hr className="hr-bottom"/>
                             <div className='map-ad'>
-
+                                <a href="https://mapstatestopost.herokuapp.com/#/">
+                                    <img className='map' src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/ad2.png?raw=true"/>
+                                </a>
                             </div>
                             <h3>MapStatesToPosts</h3>
                             <div>
-                                Plug mern project here
+                                Keep track of the states
+                                that you have visited!
+                                See where other's have been. 
+                                Be inspired to travel.
                             </div>
                             <hr className="hr-bottom"/>
                         </div>
