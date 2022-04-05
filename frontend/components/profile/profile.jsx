@@ -12,15 +12,18 @@ class Profile extends React.Component {
         this.props.fetchUser(this.props.userId)
     }
 
-    openModal(){
-        this.props.openModal('editprofile')
+    openModal() {
+        if (this.props.userId === this.props.sessionId) {
+            this.props.giveUserId(this.props.userId);
+            this.props.openModal('editprofile');
+        }
     }
 
     render(){
         if (!this.props) return null;
         const { users, userId, posts, friends } = this.props;
         const currentUser = users[userId];
-        console.log(currentUser);
+        // console.log(currentUser);
 
         let userPosts = [];
         

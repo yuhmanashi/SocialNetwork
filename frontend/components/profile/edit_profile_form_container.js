@@ -4,11 +4,14 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 import { updateUser } from '../../actions/user_actions';
 
 const mSTP = state => ({
-    user: state.entities.users[ownProps.match.params.userId],
+    user: state.entities.users[state.ui.userId],
+    userId: state.ui.userId,
+    formType: 'Update Profile'
 });
 
 const mDTP = dispatch => ({
-    updateUser: user => dispatch(updateUser(user)),
+    action: user => dispatch(updateUser(user)),
+    closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mSTP, mDTP)(EditProfileForm);
