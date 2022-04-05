@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class MenuBar extends React.Component {    
     render(){
@@ -6,29 +7,43 @@ class MenuBar extends React.Component {
         if (!user) return null;
         return(
             <div className="menu-items">
-                <div className="user-icon">
-                    <div className='userprofile-placeholder'>
-                        <i className="fa-solid fa-circle-user fa-xl"></i>
-                    </div>
-                    <div className='name'>
-                        {user.first_name} {user.last_name}
-                    </div>
+                <div className="user">
+                    <Link to={`/profile/${this.props.currentUserId}`}>
+                        <div className="links">
+                            <i className="fa-solid fa-circle-user fa-xl"></i>
+                            <div className='name'>
+                                {user.first_name} {user.last_name}
+                            </div>
+                        </div>
+                    </Link>
                 </div>
                 {/* <div className="aboutme">
                     <img className='slogo' src="../../../assets/s-logo.png" />
                     <div className="title">About Me</div>
                 </div> */}
                 <div className="github">
-                    <a href="https://github.com/yuhmanashi/SocialNetwork/">
+                    <a href="https://github.com/yuhmanashi/SocialNetwork/" target="_blank">
                         <img className='glogo' src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/github-logo.png?raw=true" />
+                        <div className="title">Github</div>
                     </a>
-                    <div className="title">Github</div>
                 </div>
                 <div className='linkedin'>
-                    <a href="https://linkedin.com/in/yaoxu03">
+                    <a href="https://linkedin.com/in/yaoxu03" target="_blank">
                         <img className='lilogo' src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/linkedin-logo.png?raw=true"/>
+                        <div className="title">LinkedIn</div>
                     </a>
-                    <div className="title">LinkedIn</div>
+                </div>
+                <div className='angellist'>
+                    <a href="https://github.com/yuhmanashi/SocialNetwork/" target="_blank">
+                        <img className="" src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/angellist-logo.png?raw=true" />
+                        <div className="title">AngelList</div>
+                    </a>
+                </div>
+                <div className="aboutme">
+                    <a href="https://github.com/yuhmanashi/SocialNetwork/" target="_blank">
+                        <img className="" src="" />
+                        <div className="title">About Me</div>
+                    </a>
                 </div>
             </div>
         )

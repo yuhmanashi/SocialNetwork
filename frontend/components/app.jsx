@@ -9,10 +9,10 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
     <div>
         <ModalContainer />
-        <AuthRoute path="/" component={LogInContainer} />
-        <ProtectedRoute path="/home" component={HomeContainer} />
-        <ProtectedRoute path="/friends" component={FriendsContainer} />
-        <ProtectedRoute path="/profile/:userId" component={ProfileContainer} />
+        <AuthRoute exact path="/" component={LogInContainer} />
+        <ProtectedRoute exact path="/home" component={HomeContainer} />
+        <ProtectedRoute exact path="/friends" component={FriendsContainer} />
+        <ProtectedRoute exact path="/profile/:userId" component={ProfileContainer} />
     </div>
 )
 
