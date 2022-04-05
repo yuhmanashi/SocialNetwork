@@ -34,7 +34,7 @@ class Home extends React.Component {
                             <p>Sponsored</p>
                             <hr className="hr-top"/>
                             <div className='game-ad'>
-                                <a href="https://yuhmanashi.github.io/Defend_the_Realm/">
+                                <a href="https://yuhmanashi.github.io/Defend_the_Realm/" target="_blank">
                                     <img className='game' src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/ad.png?raw=true"/>
                                 </a>
                             </div>
@@ -46,7 +46,7 @@ class Home extends React.Component {
                             </div>
                             <hr className="hr-bottom"/>
                             <div className='map-ad'>
-                                <a href="https://mapstatestopost.herokuapp.com/#/">
+                                <a href="https://mapstatestopost.herokuapp.com/#/" target="_blank">
                                     <img className='map' src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/ad2.png?raw=true"/>
                                 </a>
                             </div>
