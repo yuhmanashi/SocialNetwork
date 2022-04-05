@@ -59,9 +59,6 @@ class Profile extends React.Component {
                             <div className="intro">
                                 <div className="head">
                                     <h3>Intro</h3>
-                                    <div className="editbtn" onClick={this.openModal}>
-                                        Edit
-                                    </div>
                                 </div>
                                 <div className="bio">
                                     <p>Bio</p>
@@ -70,6 +67,15 @@ class Profile extends React.Component {
                                 <div className="birthday">
                                     <p>Birthday</p>
                                     {currentUser.birthday}
+                                </div>
+                                <br />
+                                <div className="editbtn" onClick={this.openModal}>
+                                        Edit
+                                </div>
+                            </div>
+                            <div className="placehold">
+                                <div>
+                                    Hi
                                 </div>
                             </div>
                         </div>

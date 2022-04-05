@@ -32,6 +32,8 @@ class EditProfileForm extends React.Component {
                         onChange={this.update('biography')}
                     />
                     <input
+                        type="date"
+                        min="1900-01-01"
                         className="birthday"
                         value={this.state.birthday}
                         onChange={this.update('birthday')}

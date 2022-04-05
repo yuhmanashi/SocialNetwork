@@ -11,7 +11,6 @@ const UsersReducer = (state = {}, action) => {
         case RECEIVE_USERS:
             return action.payload.users
         case RECEIVE_USER:
-            console.log(action);
             nextState[action.user.id] = action.user
             return nextState;
         default:

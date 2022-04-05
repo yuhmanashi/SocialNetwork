@@ -25,11 +25,7 @@ export const fetchUser = userId => dispatch => (
         .then(user => dispatch(receiveUser(user)))
 )
 
-export const updateUser = user => dispatch => {
-    console.log(user);
-    return (
+export const updateUser = user => dispatch => (
     UserUtil.updateUser(user)
-        .then(userInfo => {
-            console.log(userInfo);
-            dispatch(receiveUser(userInfo))})
-)}
+        .then(user => dispatch(receiveUser(user)))
+)

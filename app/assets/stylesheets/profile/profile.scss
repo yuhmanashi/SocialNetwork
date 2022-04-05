@@ -74,26 +74,42 @@
                 margin-top: 0;
             }
 
+            .left > * {
+                margin-bottom: 15px;
+            }
+
             .left {
-                height: 150px;
+                display: flex;
+                flex-direction: column;
                 width: 290px;
-                border-radius: 15px;
-                background: white;
                 margin-right: 5px;
 
                 .intro {
+                    display: flex;
+                    flex-direction: column;
                     padding: 10px;
-                    background: transparent;
+                    background: white;
+                    border-radius: 15px;
 
                     * {
                         background: transparent;
                     }
                     
+                    .head {
+                        display: flex;
+                    }
+
                     p {
                         font-weight: bold;
                         margin-top: 5px;
                         margin-bottom: 5px;
                     }
+                }
+
+                .placehold {
+                    padding: 10px;
+                    background: white;
+                    border-radius: 15px;
                 }
             }
 
