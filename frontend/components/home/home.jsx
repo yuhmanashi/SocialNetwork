@@ -47,7 +47,7 @@ class Home extends React.Component {
                             <hr className="hr-bottom"/>
                             <div className='map-ad'>
                                 <a href="https://mapstatestopost.herokuapp.com/#/" target="_blank">
-                                    <img className='map' src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/ad2.png?raw=true"/>
+                                    <img className='map' src="https://github.com/yuhmanashi/SocialNetwork/blob/main/app/assets/images/map-ad.png?raw=true"/>
                                 </a>
                             </div>
                             <h3>MapStatesToPosts</h3>
