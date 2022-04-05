@@ -45,6 +45,14 @@ class Home extends React.Component {
                                 classic tower defense game.
                             </div>
                             <hr className="hr-bottom"/>
+                            <div className='map-ad'>
+
+                            </div>
+                            <h3>MapStatesToPosts</h3>
+                            <div>
+                                Plug mern project here
+                            </div>
+                            <hr className="hr-bottom"/>
                         </div>
                     </div>
                 </div>

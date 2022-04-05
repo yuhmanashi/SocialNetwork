@@ -5,11 +5,12 @@ import PostIndexContainer from '../posts/post_index_container';
 class Profile extends React.Component {
     constructor(props){
         super(props);
-        this.openModal = this.openModal.bind(this)
+        this.openModal = this.openModal.bind(this);
+        this.handleDate = this.handleDate.bind(this);
     }
     
     componentDidMount(){
-        this.props.fetchUser(this.props.userId)
+        this.props.fetchUsers();
     }
 
     openModal() {
@@ -19,12 +20,19 @@ class Profile extends React.Component {
         }
     }
 
-    render(){
-        if (!this.props) return null;
-        const { users, userId, posts, friends } = this.props;
-        const currentUser = users[userId];
-        // console.log(currentUser);
+    handleDate(){
+        const datetime = this.props.user.birthday
+        if (!datetime) return null;
+        const year = datetime.slice(0,4);
+        const month = datetime.slice(5,7);
+        const day = datetime.slice(8,10);
+        return `${month}/${day}/${year}`
+    }
 
+    render(){
+        const { user, users, userId, posts, friends } = this.props;
+        // const currentUser = users[userId];
+        if (!user) return null;
         let userPosts = [];
         
         posts.forEach(post => {
@@ -46,7 +54,7 @@ class Profile extends React.Component {
                             </div>
                             <div className='namefriends'>
                                 <div className='name'>
-                                    {currentUser.first_name} {currentUser.last_name}
+                                    {user.first_name} {user.last_name}
                                 </div>
                                 <div className="number-friends">
                                     {`${userFriends.length} Friends`}
@@ -62,11 +70,11 @@ class Profile extends React.Component {
                                 </div>
                                 <div className="bio">
                                     <p>Bio</p>
-                                    {currentUser.biography}
+                                    {user.biography}
                                 </div>
                                 <div className="birthday">
                                     <p>Birthday</p>
-                                    {currentUser.birthday}
+                                    {this.handleDate()}
                                 </div>
                                 <br />
                                 <div className="editbtn" onClick={this.openModal}>

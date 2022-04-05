@@ -13,39 +13,49 @@
             padding: 20px;
 
             .menu-items {
-                .user-icon {
-                    display: flex;
-                    align-items: center;
-                    
-                    .userprofile-placeholder {
-                        padding: 10px;
-                        background: transparent;
-                        padding-left: 0;
-                        margin-top: 10px;
-                    
-                        .fa-circle-user {
-                            font-size: 40px;
-                            color: rgb(214, 214, 214);
-                        }
-                    }
 
-                    .name {
-                        font-weight: bold;
+                .user {
+                    padding: 10px;
+                    background: transparent;
+                    padding-left: 0;
+                    margin-top: 10px;
+
+                    a {
+                        color: black;
+                        text-decoration: none;
+                        
+                        .links {
+                            display: flex;
+                            align-items: center;
+    
+                            .fa-circle-user {
+                                font-size: 40px;
+                                color: rgb(214, 214, 214);
+                            }
+    
+                            .name {
+                                margin-left: 10px;
+                                font-weight: bold;
+                            }
+                        }
                     }
                 }
 
-                .aboutme, .github, .linkedin {
-                    display: flex;
-                    padding: 5px;
-                    margin-top: 5px;
-                    padding-left: 0;
-                    
-                    .title {
-                        align-self: center;
-                        margin-left: 10px;
-                        font-weight: bold; 
+                .aboutme, .github, .linkedin, .angellist {
+                    a {
+                        color: black;
+                        text-decoration: none;
+                        display: flex;
+                        padding: 5px;
+                        margin-top: 5px;
+                        padding-left: 0;
+
+                        .title {
+                            align-self: center;
+                            margin-left: 10px;
+                            font-weight: bold; 
+                        }
                     }
-                    
                 }
 
                 .aboutme .title {
