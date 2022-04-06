@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class FriendIndexItems extends React.Component {
     constructor(props){
@@ -16,17 +15,14 @@ class FriendIndexItems extends React.Component {
         let requestSent = {'user_id': userId, 'friend_id': friend.id, 'status': 'sent'}
         let friendRequest = {'user_id': friend.id, 'friend_id': userId, 'status': 'requested'}
         if (userFriendships){
-            console.log('delete')
             let friendship = userFriendships.filter(requested => requested.friend_id === userId && requested.user_id === friend.friend_id)
             action(friend.id).then(action(friendship[0].id));
         } else {
-            console.log('create')
             action(requestSent).then(action(friendRequest))
         }
     }
 
     handleAccept(e) {
-        console.log('accept')
         e.preventDefault();
         const { friend, updateFriend, type, userId, userFriendships } = this.props;
         let friendship = userFriendships.filter(requested => requested.friend_id === userId && requested.user_id === friend.friend_id)
@@ -38,7 +34,6 @@ class FriendIndexItems extends React.Component {
     }
 
     handleReject(e) {
-        console.log('reject')
         e.preventDefault();
         const { friend, deleteFriend, type, userId, userFriendships } = this.props;
         let friendship = userFriendships.filter(requested => requested.friend_id === userId && requested.user_id === friend.friend_id)

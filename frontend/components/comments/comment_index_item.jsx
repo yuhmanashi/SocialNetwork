@@ -42,25 +42,39 @@ class CommentIndexItem extends React.Component {
     }
 
     render(){
-        if (this.props.comment.post_id === this.props.post_id) {
+        const { comment, post_id, users } = this.props;
+
+        let firstName;
+        let lastName;
+
+        if (!this.props.comment.first_name) {
+            let user = users[comment.author_id];
+            firstName = user.first_name;
+            lastName = user.last_name;
+        } else {
+            firstName = comment.first_name;
+            lastName = comment.last_name;
+        }
+
+        if (comment.post_id === post_id) {
             return(
                 <div className="comment-items">
                     <div className="comment-body">
                         <div className="otherprofile-placeholder">
-                            <Link to={`/profile/${this.props.comment.author_id}`}>
+                            <Link to={`/profile/${comment.author_id}`}>
                                 <i className="fa-solid fa-circle-user fa-xl"></i>
                             </Link>
                         </div>
                         <div className="comment-box">
                             <div className="head">
-                                <Link to={`/profile/${this.props.comment.author_id}`}>
+                                <Link to={`/profile/${comment.author_id}`}>
                                     <div className="name">
-                                        {this.props.comment.first_name} {this.props.comment.last_name}
+                                        {firstName} {lastName}
                                     </div>
                                 </Link>
                             </div>
                             <div className="comment">
-                                {this.props.comment.body}
+                                {comment.body}
                             </div>
                         </div>
                         <div className="dropdown">

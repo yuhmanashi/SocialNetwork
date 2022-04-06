@@ -39,12 +39,12 @@ class MenuBar extends React.Component {
                         <div className="title">AngelList</div>
                     </a>
                 </div>
-                <div className="aboutme">
+                {/* <div className="aboutme">
                     <a className="me" href="https://github.com/yuhmanashi/SocialNetwork/" target="_blank">
                         <i className="fa-solid fa-circle-user fa-xl"></i>
                         <div className="title">About Me</div>
                     </a>
-                </div>
+                </div> */}
             </div>
         )
     }

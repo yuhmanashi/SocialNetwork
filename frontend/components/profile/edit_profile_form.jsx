@@ -3,7 +3,7 @@ import React from "react";
 class EditProfileForm extends React.Component {
     constructor(props){
         super(props);
-        this.state = this.props.user;
+        this.state = this.props.user
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     
@@ -15,14 +15,14 @@ class EditProfileForm extends React.Component {
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
-    
+
     render(){
         if (!this.props) return null;
         const { formType, closeModal } = this.props;
         return(
             <div className='editprofileformcontainer'>
                 <div className='form-header'>
-                    <h3>{formType}</h3>
+                    <h3>Update Bio</h3>
                     <div onClick={closeModal} className="close-x">X</div>
                 </div>
                 <form>
@@ -31,14 +31,14 @@ class EditProfileForm extends React.Component {
                         value={this.state.biography}
                         onChange={this.update('biography')}
                     />
-                    <input
+                    {/* <input
                         type="date"
                         min="1900-01-01"
                         className="birthday"
                         value={this.state.birthday}
                         onChange={this.update('birthday')}
-                    />
-                    <button className='profilebtn' onClick={this.handleSubmit}>Submit</button>
+                    /> */}
+                    <div className='profilebtn' onClick={this.handleSubmit}>Update</div>
                 </form>
             </div>
         )

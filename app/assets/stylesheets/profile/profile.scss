@@ -136,6 +136,7 @@
                         color: blue;
                         font-size: 13px;
                         font-weight: bold;
+                        align-self: center;
                     }
 
                     .editbtn:hover {
@@ -203,6 +204,9 @@
                                 color: rgb(214, 214, 214);
                             }
 
+                            .name {
+                                font-weight: bold;
+                            }
                             * {
                                 margin: 3px;
                             }
@@ -220,6 +224,28 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.editprofileformcontainer {
+    form {
+        display: flex;
+        flex-direction: column;
+
+        .profilebtn {
+            background-color: #47ca3b;
+            width: 80px;
+            margin-top: 6px;
+            font-size: 15px;
+            align-self: center;
+            text-align: center;
+            color: white;
+        }
+
+        .profilebtn:hover {
+            background: #07c22f;
+            cursor: pointer;
         }
     }
 }

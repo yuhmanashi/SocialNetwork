@@ -7,7 +7,7 @@ class CommentIndex extends React.Component {
   }
 
   render() {
-    const { comments, user_id, deleteComment, post_id, giveCommentId, openModal } = this.props;
+    const { comments, user_id, deleteComment, post_id, giveCommentId, openModal, users } = this.props;
 
     return (
         <ul className="commentcontainer"> 
@@ -15,6 +15,7 @@ class CommentIndex extends React.Component {
             comments.map(comment => (
               <CommentIndexItem
                 comment={comment}
+                users={users}
                 post_id={post_id}
                 user_id={user_id}
                 deleteComment={deleteComment}

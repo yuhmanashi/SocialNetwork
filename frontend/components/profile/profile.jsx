@@ -92,7 +92,6 @@ class Profile extends React.Component {
             if (post.author_id === userId) userPosts.push(post);
         })
 
-        console.log(userPosts)
         const userFriends = friends.filter(friend => friend.user_id === userId && friend.status === 'true');
         return(
             <div className="profile-page">
@@ -131,17 +130,17 @@ class Profile extends React.Component {
                                         {this.handleBio()}
                                     </div>
                                 </div>
-                                <div className="birthday">
+                                {/* <div className="birthday">
                                     <p>Birthday</p>
                                     <div className="content">
                                         {this.handleBirthday()}
                                     </div>
-                                </div>
+                                </div> */}
                                 
                                 <hr className="hr2"/>
 
                                 <div className="editbtn" onClick={this.openModal}>
-                                    Update info
+                                    Update bio
                                 </div>
                             </div>
                             <div className="placehold">
