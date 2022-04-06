@@ -8,6 +8,7 @@ class PostIndexItem extends React.Component {
         super(props);
         this.openModal = this.openModal.bind(this);
         this.handleDeletePost = this.handleDeletePost.bind(this);
+        this.handleUser = this.handleUser.bind(this);
     }
 
     openModal() {
@@ -41,11 +42,22 @@ class PostIndexItem extends React.Component {
         return `${month} ${day} at ${hour}${minutes} ${AM}`
     }
 
+    handleUser(){
+        const { post, allUsers } = this.props;
+        const user = allUsers[post.author_id]
+        if (!user) return null;
+        return(
+            <Link to={`/profile/${user.id}`}>
+                {user.first_name} {user.last_name}
+            </Link>
+        )
+    }
+
     render(){
         const { post, allUsers } = this.props;
         const user = allUsers[post.author_id]
-        
-        if (!user) return null;
+        if (!user.first_name) return null;
+
         return(
             <li className="postitems">
                 <div className="head">
@@ -57,9 +69,7 @@ class PostIndexItem extends React.Component {
                         </div>
                         <div className='namedate'>
                             <div className="name">
-                                <Link to={`/profile/${user.id}`}>
-                                    {user.first_name} {user.last_name}
-                                </Link>
+                                {this.handleUser()}
                             </div>
                             <div className="datetime">
                                 {this.handleDate()}

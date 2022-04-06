@@ -13,7 +13,6 @@ class Profile extends React.Component {
     }
     
     componentDidMount(){
-        this.props.fetchUsers();
         this.props.fetchFriends();
     }
 
@@ -93,6 +92,7 @@ class Profile extends React.Component {
             if (post.author_id === userId) userPosts.push(post);
         })
 
+        console.log(userPosts)
         const userFriends = friends.filter(friend => friend.user_id === userId && friend.status === 'true');
         return(
             <div className="profile-page">
@@ -152,7 +152,7 @@ class Profile extends React.Component {
                         </div>
                         <div className="right">
                             <div className="content">
-                                <PostIndexContainer userPosts={userPosts} />
+                                <PostIndexContainer userPosts={userPosts} profile={'true'} profileId={userId}/>
                             </div>
                         </div>
                     </div>

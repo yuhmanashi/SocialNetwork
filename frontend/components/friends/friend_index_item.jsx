@@ -26,15 +26,19 @@ class FriendIndexItems extends React.Component {
     }
 
     handleAccept(e) {
+        console.log('accept')
         e.preventDefault();
         const { friend, updateFriend, type, userId, userFriendships } = this.props;
         let friendship = userFriendships.filter(requested => requested.friend_id === userId && requested.user_id === friend.friend_id)
         friendship[0].status = 'true';
         friend.status = 'true';
+        console.log(friend)
+        console.log(friendship)
         updateFriend(friend).then(updateFriend(friendship[0]));
     }
 
     handleReject(e) {
+        console.log('reject')
         e.preventDefault();
         const { friend, deleteFriend, type, userId, userFriendships } = this.props;
         let friendship = userFriendships.filter(requested => requested.friend_id === userId && requested.user_id === friend.friend_id)
@@ -71,7 +75,14 @@ class FriendIndexItems extends React.Component {
     }
 
     render(){
-        const { friend } = this.props;
+        const { friend, users, type } = this.props;
+        let user;
+        if (type === 'Add Friend'){
+            user = users[friend.id - 1]
+        } else {
+            user = users[friend.friend_id - 1]
+        }
+        if (!user) return null;
         // if ( type === "addfriend" && user.id != userId && Object.keys(userFriends).includes(friend.id)) {
             return(
                 <li className="friend-item">
@@ -82,9 +93,7 @@ class FriendIndexItems extends React.Component {
                         </div>
                         <div className='body'>
                             <div className="name">
-                                <Link to={`/profile/${friend.id}`}>
-                                    {friend.first_name} {friend.last_name}
-                                </Link>
+                                {user.first_name} {user.last_name}
                             </div>
                             {this.handleFriendAction()}
                         </div>

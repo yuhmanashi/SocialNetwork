@@ -5,30 +5,15 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logout = this.logout.bind(this);
-    this.handleHome = this.handleHome.bind(this);
-    this.handleFriends = this.handleFriends.bind(this);
-    this.handleGroups = this.handleGroups.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.fetchUsers();
   }
 
   logout(e) {
     e.preventDefault();
     this.props.logOut();
-  }
-
-  handleHome(){
-    console.log('home')
-  }
-
-  handleFriends(){
-    console.log('friends')
-  }
-
-  handleGroups(){
-    console.log('groups')
-  }
-
-  handleProfile(){
-    console.log('profile')
   }
 
   render(){
@@ -44,17 +29,17 @@ class NavBar extends React.Component {
           <input type="text" placeholder='Search'/> */}
         </div>
         <div className="center">
-          <div onClick={this.handleHome} className="home-icon">
+          <div className="home-icon">
             <Link to='/home/'>
               <i className="fa-solid fa-house fa-xl"></i>
             </Link>
           </div>
-          <div onClick={this.handleFriends} className="friends-icon">
+          <div className="friends-icon">
             <Link to='/friends/'>
               <i className="fa-solid fa-user-group fa-xl"></i>
             </Link>
           </div>
-          <div onClick={this.handleProfile} className="profile-icon">
+          <div className="profile-icon">
             <Link to={`/profile/${userId}`}>
               <i className="fa-solid fa-user fa-xl"></i>
             </Link>

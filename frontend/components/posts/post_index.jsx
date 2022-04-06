@@ -2,26 +2,30 @@ import React from 'react';
 import PostIndexItem from './post_index_item';
 
 class PostIndex extends React.Component {
-  render() {
+  constructor(props){
+    super(props);
+    this.handlePosts = this.handlePosts.bind(this);
+    this.openModal = this.openModal.bind(this);
+  }
 
-    const { allPosts, userPosts, user_id, deletePost, openModal, givePostId, currentUser, allUsers } = this.props;
-    
+  handlePosts(){
+    const { allPosts, userPosts, user_id, deletePost, openModal, givePostId, allUsers, profile } = this.props;
     let posts;
-    if (userPosts) {
+    if (profile && !userPosts[0]) {
+      return (
+        <div className='no-posts'>
+          <br />
+          <p>No posts found. Add some posts!</p>
+        </div>
+      )
+    } else if (userPosts) {
       posts = userPosts
     } else {
       posts = allPosts
     }
 
-    return (
-      <div className="post-box">
-        <div className="create-post-box">
-          <div className='userprofile-placeholder'>
-            <i className="fa-solid fa-circle-user fa-xl"></i>
-          </div>
-          <div onClick={() => this.props.openModal('createpost')} className='create-post'>What's on your mind?</div>
-        </div>
-        <ul className="postcontainer">
+    return(
+      <ul className="postcontainer">
           {
             posts.reverse().map(post => (
               <PostIndexItem
@@ -35,7 +39,29 @@ class PostIndex extends React.Component {
               />
             ))
           }
-        </ul>
+      </ul>
+    )
+  }
+
+  openModal(){
+    const { user_id, profile, profileId } = this.props;
+    if (profile && user_id === profileId) { 
+      this.props.openModal('createpost')
+    } else if (!profile) {
+      this.props.openModal('createpost')
+    }
+  }
+
+  render() {
+    return (
+      <div className="post-box">
+        <div className="create-post-box">
+          <div className='userprofile-placeholder'>
+            <i className="fa-solid fa-circle-user fa-xl"></i>
+          </div>
+          <div onClick={this.openModal} className='create-post'>What's on your mind?</div>
+        </div>
+        {this.handlePosts()}
       </div>
     );
   }

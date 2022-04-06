@@ -36,6 +36,22 @@
         }
     }
 
+    .no-posts {
+        border-radius: 15px;
+        background-color: white;
+        width: 603px;
+        height: 140px;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: x-large;
+
+        * {
+            background: transparent;
+        }
+    }
+
     ul {
         list-style: none;
         display: flex;

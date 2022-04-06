@@ -9,7 +9,9 @@ const mSTP = (state, ownProps) => ({
   allPosts: Object.values(state.entities.posts),
   user_id: state.session.id,
   userPosts: ownProps.userPosts,
-  allUsers: state.entities.users
+  allUsers: state.entities.users,
+  profile: ownProps.profile,
+  profileId: ownProps.profileId
 });
 
 const mDTP = dispatch => ({

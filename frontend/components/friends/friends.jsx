@@ -5,7 +5,6 @@ import FriendIndexItems from './friend_index_item';
 class Friends extends React.Component {
     componentDidMount(){
         this.props.fetchFriends();
-        this.props.fetchUsers();
     }
 
     render(){
@@ -13,33 +12,37 @@ class Friends extends React.Component {
         
         if (!friends) return null;
 
-        let userFriendsId = [] 
-        friends.forEach(friend => {if (friend.user_id === userId && friend.status === 'true') userFriendsId.push(friend.friend_id)});
-        const userFriends = allUsers.filter(user => 
-            userFriendsId.includes(user.id) && user.id != userId
-        )
+        // let userFriendsId = [] 
+        // friends.forEach(friend => {if (friend.user_id === userId && friend.status === 'true') userFriendsId.push(friend.friend_id)});
+        // const userFriends = allUsers.filter(user => 
+        //     userFriendsId.includes(user.id) && user.id != userId
+        // )
+
+        // let userFriendships = friends.filter(friend => friend.friend_id === userId)
+
+        // let requestSentId = []
+        // friends.forEach(friend => {if (friend.user_id === userId && friend.status === 'sent') requestSentId.push(friend.friend_id)});
+        // const requestSent = allUsers.filter(user => 
+        //     requestSentId.includes(user.id) && user.id != userId
+        // )
+
+        // let requestedId = []
+        // friends.forEach(friend => {if (friend.user_id === userId && friend.status === 'requested') requestedId.push(friend.friend_id)});
+        // const requested = allUsers.filter(user => 
+        //     requestedId.includes(user.id) && user.id != userId
+        // )
+        
+        const userFriends = friends.filter(friend => friend.user_id === userId && friend.status === 'true');
 
         let userFriendships = friends.filter(friend => friend.friend_id === userId)
 
-        let requestSentId = []
-        friends.forEach(friend => {if (friend.user_id === userId && friend.status === 'sent') requestSentId.push(friend.friend_id)});
-        const requestSent = allUsers.filter(user => 
-            requestSentId.includes(user.id) && user.id != userId
-        )
+        const requestSent = friends.filter(friend => friend.user_id === userId && friend.status === 'sent');
 
-        let requestedId = []
-        friends.filter(friend => {if (friend.user_id === userId && friend.status === 'requested') requestedId.push(friend.friend_id)});
-        const requested = allUsers.filter(user => 
-            requestedId.includes(user.id) && user.id != userId
-        )
-        
+        const requested = friends.filter(friend => friend.user_id === userId && friend.status === 'requested');
+
         let friendIds = [];
-        
-        console.log(userFriends)
-        console.log(requestSent)
-        console.log(requested)
 
-        userFriendsId.forEach(friendId => {
+        userFriends.forEach(friendId => {
             friendIds.push(friendId)
         })
 
@@ -70,6 +73,7 @@ class Friends extends React.Component {
                                     userFriends.map((friend, index) => (
                                         <FriendIndexItems 
                                             user={currentUser}
+                                            users={allUsers}
                                             userFriendships={userFriendships}
                                             friend={friend}
                                             userId={userId} 
@@ -81,6 +85,7 @@ class Friends extends React.Component {
                                 }
                             </ul>
                         </div>
+
                         <hr className="hr-top"/>
                         <h3>Friend Requests</h3>
                         <div>
@@ -89,6 +94,7 @@ class Friends extends React.Component {
                                     requested.map((friend, index) => (
                                         <FriendIndexItems 
                                             user={currentUser}
+                                            users={allUsers}
                                             userFriendships={userFriendships}
                                             friend={friend}
                                             userId={userId} 
@@ -101,6 +107,7 @@ class Friends extends React.Component {
                                 }
                             </ul>
                         </div>
+
                         <h3>Request Sent</h3>
                         <div>
                             <ul className="friends">
@@ -108,6 +115,7 @@ class Friends extends React.Component {
                                     requestSent.map((friend, index) => (
                                         <FriendIndexItems 
                                             user={currentUser}
+                                            users={allUsers}
                                             userFriendships={userFriendships}
                                             friend={friend}
                                             userId={userId} 
@@ -119,6 +127,7 @@ class Friends extends React.Component {
                                 }
                             </ul>
                         </div>
+
                         <h3>People You May Know</h3>
                         <div className="recommended-friends">
                             <ul className='friends'>
@@ -126,6 +135,7 @@ class Friends extends React.Component {
                                     notFriends.map((friend, index) => (
                                         <FriendIndexItems 
                                             user={currentUser}
+                                            users={allUsers}
                                             friend={friend}
                                             userId={userId} 
                                             action={createFriend}
@@ -136,6 +146,7 @@ class Friends extends React.Component {
                                 }
                             </ul>
                         </div>
+
                     </div>
                 </div>
             </div>
