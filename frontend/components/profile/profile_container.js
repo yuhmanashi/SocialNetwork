@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import { openModal } from '../../actions/modal_actions';
 import { fetchUsers, fetchUser } from '../../actions/user_actions';
+import { fetchFriends } from '../../actions/friend_actions';
 import { giveUserId } from '../../actions/modal_info_actions';
 
 const mSTP = (state, ownProps) => ({
@@ -18,7 +19,8 @@ const mDTP = dispatch => ({
     fetchUsers: () => dispatch(fetchUsers()),
     fetchUser: userId => dispatch(fetchUser(userId)),
     openModal: form => dispatch(openModal(form)),
-    giveUserId: userId => dispatch(giveUserId(userId))
+    giveUserId: userId => dispatch(giveUserId(userId)),
+    fetchFriends: () => dispatch(fetchFriends())
 })
 
 export default connect(mSTP, mDTP)(Profile);

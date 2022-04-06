@@ -1,4 +1,5 @@
 .profile-page {
+
     .page {
         display: flex;
         flex-direction: column;
@@ -87,16 +88,41 @@
                 .intro {
                     display: flex;
                     flex-direction: column;
-                    padding: 10px;
                     background: white;
                     border-radius: 15px;
 
                     * {
                         background: transparent;
+                        margin: 10px;
                     }
                     
+                    .bio, .birthday {
+                        margin-bottom: 0;
+                        margin-top: 0;
+                    }
+
+                    .hr2 {
+                        margin-left: 0;
+                        margin-top: 15px;
+                        margin-bottom: 0;
+                        width: 100%;
+                        background-color: rgb(219, 230, 221);
+                        border: none;
+                        height: 1px;
+                    }
+        
+                    .hr1 {
+                        margin-top: 0;
+                        margin-left: 0;
+                        width: 100%;
+                        background-color: rgb(219, 230, 221);
+                        border: none;
+                        height: 1px;
+                    }
+
                     .head {
                         display: flex;
+                        margin-bottom: 0;
                     }
 
                     p {
@@ -104,12 +130,84 @@
                         margin-top: 5px;
                         margin-bottom: 5px;
                     }
+
+                    .editbtn {
+                        font-family: 'Asap', sans-serif;
+                        color: blue;
+                        font-size: 13px;
+                        font-weight: bold;
+                    }
+
+                    .editbtn:hover {
+                        cursor: pointer;
+                    }
                 }
 
                 .placehold {
-                    padding: 10px;
-                    background: white;
+                    background-color: white;
                     border-radius: 15px;
+                    .friends {
+                        background-color: white;
+
+                        .hr2 {
+                            margin-left: 0;
+                            margin-bottom: 0;
+                            width: 100%;
+                            background-color: rgb(219, 230, 221);
+                            border: none;
+                            height: 1px;
+                        }
+            
+                        .hr1 {
+                            margin-left: 0;
+                            width: 100%;
+                            background-color: rgb(219, 230, 221);
+                            border: none;
+                            height: 1px;
+                        }
+
+                        p {
+                            background-color: white;
+                            text-align: center;
+                        }
+                    }
+
+                    h3 {
+                        margin: 0;
+                        margin-left: 20px;
+                        margin-top: 10px;
+                        background: white;
+                    }
+
+                    .friends-container {
+                        background-color: white;
+                        padding-left: 0;
+
+                        * {
+                            background: transparent;
+                        }
+
+                        li {
+                            list-style: none;
+                            display: flex;
+                            margin: 15px;
+                            
+                            a {
+                                color: black;
+                                display: flex;
+                                text-decoration: none;
+                            }
+
+                            .fa-circle-user {
+                                font-size: xx-large;
+                                color: rgb(214, 214, 214);
+                            }
+
+                            * {
+                                margin: 3px;
+                            }
+                        }
+                    }
                 }
             }
 

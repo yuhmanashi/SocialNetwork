@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class FriendIndexItems extends React.Component {
     constructor(props){
@@ -70,7 +71,7 @@ class FriendIndexItems extends React.Component {
     }
 
     render(){
-        const { friend, type } = this.props;
+        const { friend } = this.props;
         // if ( type === "addfriend" && user.id != userId && Object.keys(userFriends).includes(friend.id)) {
             return(
                 <li className="friend-item">
@@ -81,7 +82,9 @@ class FriendIndexItems extends React.Component {
                         </div>
                         <div className='body'>
                             <div className="name">
-                                {friend.first_name} {friend.last_name}
+                                <Link to={`/profile/${friend.id}`}>
+                                    {friend.first_name} {friend.last_name}
+                                </Link>
                             </div>
                             {this.handleFriendAction()}
                         </div>

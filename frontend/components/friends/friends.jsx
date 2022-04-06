@@ -5,6 +5,7 @@ import FriendIndexItems from './friend_index_item';
 class Friends extends React.Component {
     componentDidMount(){
         this.props.fetchFriends();
+        this.props.fetchUsers();
     }
 
     render(){
@@ -12,18 +13,34 @@ class Friends extends React.Component {
         
         if (!friends) return null;
 
-        let userFriends = friends.filter(friend => friend.user_id === userId && friend.status === 'true');
-        
+        let userFriendsId = [] 
+        friends.forEach(friend => {if (friend.user_id === userId && friend.status === 'true') userFriendsId.push(friend.friend_id)});
+        const userFriends = allUsers.filter(user => 
+            userFriendsId.includes(user.id) && user.id != userId
+        )
+
         let userFriendships = friends.filter(friend => friend.friend_id === userId)
 
-        let requestSent = friends.filter(friend => friend.user_id === userId && friend.status === 'sent');
-        
-        let requested = friends.filter(friend => friend.user_id === userId && friend.status === 'requested');
+        let requestSentId = []
+        friends.forEach(friend => {if (friend.user_id === userId && friend.status === 'sent') requestSentId.push(friend.friend_id)});
+        const requestSent = allUsers.filter(user => 
+            requestSentId.includes(user.id) && user.id != userId
+        )
 
+        let requestedId = []
+        friends.filter(friend => {if (friend.user_id === userId && friend.status === 'requested') requestedId.push(friend.friend_id)});
+        const requested = allUsers.filter(user => 
+            requestedId.includes(user.id) && user.id != userId
+        )
+        
         let friendIds = [];
         
-        userFriends.forEach(friend => {
-            friendIds.push(friend.friend_id)
+        console.log(userFriends)
+        console.log(requestSent)
+        console.log(requested)
+
+        userFriendsId.forEach(friendId => {
+            friendIds.push(friendId)
         })
 
         userFriendships.forEach(friendship => {
