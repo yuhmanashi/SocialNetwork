@@ -13,8 +13,10 @@ export const fetchUser = userId => (
 
 export const updateUser = user => (
     $.ajax({
-        url: `api/users/${user.id}`,
+        url: `api/users/${parseInt(user.get('user[id]'))}`,
         method: 'PATCH',
-        data: { user }
+        data: user,
+        contentType: false,
+        processData: false
     })
 )

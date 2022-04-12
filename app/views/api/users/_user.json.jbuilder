@@ -1,4 +1,4 @@
-json.extract! user, :id, :first_name, :last_name, :email, :biography, :birthday
+json.extract! user, :id, :first_name, :last_name, :email, :biography, :birthday, :photo, :cover_photo
 
 json.posts do 
     user.posts.each do |post|

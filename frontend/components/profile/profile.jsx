@@ -10,6 +10,7 @@ class Profile extends React.Component {
         this.handleBio = this.handleBio.bind(this);
         this.handleBirthday = this.handleBirthday.bind(this);
         this.handleFriends = this.handleFriends.bind(this);
+        this.handleImage = this.handleImage.bind(this);
     }
     
     componentDidMount(){
@@ -32,14 +33,18 @@ class Profile extends React.Component {
     }
 
     handleBirthday(){
-        const datetime = this.props.user.birthday
-        if (!datetime) {
+        if (!this.props.user.birthday) {
             return "Add your birthday"
         } else {
-            const year = datetime.slice(0,4);
-            const month = datetime.slice(5,7);
-            const day = datetime.slice(8,10);
-            return `${month}/${day}/${year}`;
+            return this.props.user.birthday;
+        }
+    }
+
+    handleImage(){
+        if (!this.props.user.photo) {
+            return 'add a photo'
+        } else {
+            return this.props.user.photo;
         }
     }
 
@@ -130,10 +135,16 @@ class Profile extends React.Component {
                                         {this.handleBio()}
                                     </div>
                                 </div>
-                                {/* <div className="birthday">
+                                <div className="birthday">
                                     <p>Birthday</p>
                                     <div className="content">
                                         {this.handleBirthday()}
+                                    </div>
+                                </div>
+                                {/* <div className="image">
+                                    <p>Image</p>
+                                    <div className="content">
+                                        {this.handleImage()}
                                     </div>
                                 </div> */}
                                 

@@ -1,7 +1,7 @@
 @users.each do |user|
   json.users do
     json.set! user.id do
-      json.extract! user, :id, :first_name, :last_name, :email, :biography, :birthday
+      json.extract! user, :id, :first_name, :last_name, :email, :biography, :birthday, :photo, :cover_photo
     end
   end
 
