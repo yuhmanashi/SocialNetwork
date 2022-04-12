@@ -2,6 +2,14 @@
   json.users do
     json.set! user.id do
       json.extract! user, :id, :first_name, :last_name, :email, :biography, :birthday, :photo, :cover_photo
+    
+      if user.photo.attached?
+        json.imageUrl url_for(user.photo)
+      end
+
+      if user.cover_photo.attached?
+        json.coverPhotoUrl url_for(user.cover_photo)
+      end
     end
   end
 

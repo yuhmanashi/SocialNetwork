@@ -4,6 +4,7 @@ import EditPostContainer from '../posts/edit_post_form_container'
 import CreatePostFormContainer from '../posts/create_post_form_container';
 import EditCommentFormContainer from '../comments/edit_comment_form_container';
 import EditProfileFormContainer from '../profile/edit_profile_form_container';
+import EditCoverPhotoFormContainer from '../profile/edit_cover_photo_form_container';
 
 class Modal extends React.Component {
     constructor(props) {
@@ -38,6 +39,9 @@ class Modal extends React.Component {
                 break;
             case 'editprofile':
                 form = <EditProfileFormContainer />;
+                break;
+            case 'editcoverphoto':
+                form = <EditCoverPhotoFormContainer />;
                 break;
             default:
                 return null;

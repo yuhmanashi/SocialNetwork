@@ -11,6 +11,8 @@ class Profile extends React.Component {
         this.handleBirthday = this.handleBirthday.bind(this);
         this.handleFriends = this.handleFriends.bind(this);
         this.handleImage = this.handleImage.bind(this);
+        this.coverPhotoModal = this.coverPhotoModal.bind(this);
+        this.handleCoverPhoto = this.handleCoverPhoto.bind(this);
     }
     
     componentDidMount(){
@@ -21,6 +23,13 @@ class Profile extends React.Component {
         if (this.props.userId === this.props.sessionId) {
             this.props.giveUserId(this.props.userId);
             this.props.openModal('editprofile');
+        }
+    }
+    
+    coverPhotoModal(){
+        if (this.props.userId === this.props.sessionId) {
+            this.props.giveUserId(this.props.userId);
+            this.props.openModal('editcoverphoto');
         }
     }
 
@@ -41,11 +50,22 @@ class Profile extends React.Component {
     }
 
     handleImage(){
-        if (!this.props.user.photo) {
+        if (!this.props.user.imageUrl) {
             return 'add a photo'
         } else {
-            return this.props.user.photo;
+            return <img src={this.props.user.imageUrl} />;
         }
+    }
+
+    handleCoverPhoto(){
+        let coverPhoto;
+        if (!this.props.user.coverPhotoUrl) {
+            coverPhoto = ""
+        } else {
+            coverPhoto = <img className="coverphoto" src={this.props.user.coverPhotoUrl} />;
+        }
+
+        return coverPhoto
     }
 
     handleFriends(){
@@ -103,19 +123,25 @@ class Profile extends React.Component {
                 <NavBarContainer />
                 <div className="page">
                     <div className='profile-head'>
-                        <div className="cover">                    
+                        <div className="cover">
+                            {this.handleCoverPhoto()}              
                         </div>
                         <div className='profile-info'>
-                            <div className="userprofile-placeholder">
-                                <i className="fa-solid fa-circle-user fa-xl"></i>
+                            <div className="profile-content">
+                                <div className="userprofile-placeholder">
+                                    <i className="fa-solid fa-circle-user fa-xl"></i>
+                                </div>
+                                <div className='namefriends'>
+                                    <div className='name'>
+                                        {user.first_name} {user.last_name}
+                                    </div>
+                                    <div className="number-friends">
+                                        {`${userFriends.length} Friends`}
+                                    </div>
                             </div>
-                            <div className='namefriends'>
-                                <div className='name'>
-                                    {user.first_name} {user.last_name}
-                                </div>
-                                <div className="number-friends">
-                                    {`${userFriends.length} Friends`}
-                                </div>
+                            </div>
+                            <div onClick={this.coverPhotoModal} className="editcoverphotobtn">
+                                Update Cover Photo
                             </div>
                         </div>
                     </div>
@@ -141,10 +167,16 @@ class Profile extends React.Component {
                                         {this.handleBirthday()}
                                     </div>
                                 </div>
-                                {/* <div className="image">
+                                <div className="image">
                                     <p>Image</p>
                                     <div className="content">
                                         {this.handleImage()}
+                                    </div>
+                                </div>
+                                {/* <div className="coverphoto">
+                                    <p>Cover Photo</p>
+                                    <div className="content">
+                                        {this.handleCoverPhoto()}
                                     </div>
                                 </div> */}
                                 

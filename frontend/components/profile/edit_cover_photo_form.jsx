@@ -1,6 +1,6 @@
 import React from "react";
 
-class EditProfileForm extends React.Component {
+class EditCoverPhotoForm extends React.Component {
     constructor(props){
         super(props);
         const { user } = this.props;
@@ -14,10 +14,10 @@ class EditProfileForm extends React.Component {
             biography: user.biography,
             birthday: user.birthday,
             
-            imageUrl: "",
-            imageFile: null,
-            // coverPhotoUrl: "",
-            // coverPhotoFile: null,
+            // imageUrl: "",
+            // imageFile: null,
+            coverPhotoUrl: "",
+            coverPhoto: null,
         };
         
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,12 +29,12 @@ class EditProfileForm extends React.Component {
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
         
-        reader.onloadend = () => this.setState({ imageUrl: reader.result, imageFile: file })
+        reader.onloadend = () => this.setState({ coverPhotoUrl: reader.result, coverPhoto: file })
         
         if (file) {
             reader.readAsDataURL(file);
         } else {
-            this.setState({ imageUrl: "", imageFile: null });
+            this.setState({ coverPhotoUrl: "", coverPhoto: null });
         }
     }
 
@@ -43,11 +43,9 @@ class EditProfileForm extends React.Component {
         
         const form = new FormData();
         form.append('user[id]', this.state.id);
-        form.append('user[bio]', this.state.bio);
-        form.append('user[birthday]', this.state.birthday);
 
-        if (this.state.imageFile) {
-            form.append('user[photo]', this.state.imageFile);
+        if (this.state.coverPhoto) {
+            form.append('user[cover_photo]', this.state.coverPhoto);
         }
 
         this.props.action(form).then(this.props.closeModal());
@@ -64,30 +62,20 @@ class EditProfileForm extends React.Component {
         return(
             <div className='editprofileformcontainer'>
                 <div className='form-header'>
-                    <h3>Edit Profile</h3>
+                    <h3>Edit Cover Photo</h3>
                     <div onClick={closeModal} className="close-x">X</div>
                 </div>
                 <form>
-                    <input
-                        className="biography"
-                        value={this.state.biography}
-                        onChange={this.update('biography')}
-                    />
-                    <input
-                        className='birthday'
-                        value={this.state.birthday}
-                        onChange={this.update('birthday')}
-                    />
                     <input 
-                        className='image'
+                        className='coverphoto'
                         type='file'
                         onChange={this.handleFile}
                     />
-                    <div className='profilebtn' onClick={this.handleSubmit}>Update Profile</div>
+                    <div className='profilebtn' onClick={this.handleSubmit}>Update Cover Photo</div>
                 </form>
             </div>
         )
     }
 }
 
-export default EditProfileForm;
+export default EditCoverPhotoForm;
