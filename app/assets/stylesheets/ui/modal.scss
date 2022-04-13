@@ -28,7 +28,127 @@
     }
 }
 
-.createpost-modal-child, .editpost-modal-child, .editcomment-modal-child, .editprofile-modal-child, .editcoverphoto-modal-child {
+.editprofile-modal-child {
+    position: relative;
+    bottom: 100px;
+    border-radius: 10px;
+    background: white;
+    height: 340px;
+    width: 500px;
+
+    .editprofileformcontainer {
+        padding: 5px;
+        background: transparent;
+        border-radius: 10px;
+        
+        * {
+            padding: 5px;
+            background: transparent;
+            border-radius: 10px;
+        }
+
+        .form-header {
+            text-align: center;
+
+            .close-x {
+                position: absolute;
+                background-color: white;
+                cursor: pointer;
+                top: 10px;
+                right: 17px;
+                font-size: 13px;
+                font-weight: 900;
+            }
+        
+            h3 {
+                margin-bottom: 5px;
+            }
+        }
+
+        form.edit-profile-form {
+            display: flex;
+            flex-direction: column;
+            
+            * {
+                margin-bottom: 10px;
+            }
+
+            textarea {
+                resize: none;
+                height: 100px;
+            }
+
+            input.birthday {
+                background-color: #dfdfdf;
+                border: none;
+                width: 96%;
+                padding: 10px;
+            }
+
+            .profilebtn {
+                width: 100px;
+            }
+
+
+        }
+    }
+} 
+
+.editcoverphoto-modal-child {
+    position: relative;
+    bottom: 200px;
+    left: 50px;
+    border-radius: 10px;
+    background: white;
+    height: 170px;
+    width: 300px;
+
+    .form-header {
+        text-align: center;
+    }
+
+    .close-x {
+        position: absolute;
+        background-color: white;
+        cursor: pointer;
+        top: 10px;
+        right: 17px;
+        font-size: 13px;
+        font-weight: 900;
+    }
+
+    h3 {
+        margin-bottom: 5px;
+    }
+
+    * {
+        padding: 5px;
+        background: transparent;
+        border-radius: 10px;
+
+        form {
+            input {
+                margin-bottom: 10px;
+            }
+    
+            .editcoverbtn {
+                border-radius: 10px;
+                background: #47ca3b;
+                text-align: center;
+                margin-left: 100px;
+                width: 60px;
+                color: white;
+            }
+    
+            .editcoverbtn:hover {
+                background: #07c22f;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.createpost-modal-child, .editpost-modal-child, .editcomment-modal-child {
     position: relative;
     bottom: 200px;
     left: 50px;

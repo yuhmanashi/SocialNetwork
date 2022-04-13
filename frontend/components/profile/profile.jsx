@@ -16,7 +16,7 @@ class Profile extends React.Component {
     }
     
     componentDidMount(){
-        this.props.fetchFriends();
+        this.props.fetchUsers();
     }
 
     openModal() {
@@ -42,18 +42,18 @@ class Profile extends React.Component {
     }
 
     handleBirthday(){
-        if (!this.props.user.birthday) {
+        if (!this.props.user.birthday || this.props.user.birthday === "null") {
             return "Add your birthday"
         } else {
             return this.props.user.birthday;
         }
     }
 
-    handleImage(){
-        if (!this.props.user.imageUrl) {
-            return 'add a photo'
+    handleImage(user){
+        if (!user.imageUrl) {
+            return <i className="fa-solid fa-circle-user fa-xl"></i>
         } else {
-            return <img src={this.props.user.imageUrl} />;
+            return <img className="profile-image"src={user.imageUrl} />;
         }
     }
 
@@ -91,8 +91,8 @@ class Profile extends React.Component {
                             myFriends.map((friend, index) => (
                                 <li key={index} className="friend-item">
                                     <Link to={`/profile/${friend.id}`}>
-                                        <div className="userprofile-placeholder">
-                                            <i className="fa-solid fa-circle-user fa-xl"></i>
+                                        <div className="friend">
+                                            {this.handleImage(friend)}
                                         </div>
                                         <div className="name">
                                             {friend.first_name} {friend.last_name}
@@ -110,6 +110,7 @@ class Profile extends React.Component {
     render(){
         const { user, users, userId, posts, friends } = this.props;
         // const currentUser = users[userId];
+
         if (!user) return null;
         let userPosts = [];
         
@@ -128,8 +129,8 @@ class Profile extends React.Component {
                         </div>
                         <div className='profile-info'>
                             <div className="profile-content">
-                                <div className="userprofile-placeholder">
-                                    <i className="fa-solid fa-circle-user fa-xl"></i>
+                                <div className="profile-picture">
+                                    {this.handleImage(user)}
                                 </div>
                                 <div className='namefriends'>
                                     <div className='name'>
@@ -167,23 +168,11 @@ class Profile extends React.Component {
                                         {this.handleBirthday()}
                                     </div>
                                 </div>
-                                <div className="image">
-                                    <p>Image</p>
-                                    <div className="content">
-                                        {this.handleImage()}
-                                    </div>
-                                </div>
-                                {/* <div className="coverphoto">
-                                    <p>Cover Photo</p>
-                                    <div className="content">
-                                        {this.handleCoverPhoto()}
-                                    </div>
-                                </div> */}
                                 
                                 <hr className="hr2"/>
 
                                 <div className="editbtn" onClick={this.openModal}>
-                                    Update bio
+                                    Edit
                                 </div>
                             </div>
                             <div className="placehold">

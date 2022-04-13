@@ -7,6 +7,7 @@ class FriendIndexItems extends React.Component {
         this.handleAccept = this.handleAccept.bind(this);
         this.handleReject = this.handleReject.bind(this);
         this.handleFriendAction = this.handleFriendAction.bind(this);
+        this.handleImage = this.handleImage.bind(this);
     }
 
     handleClick(e) {
@@ -69,6 +70,14 @@ class FriendIndexItems extends React.Component {
         )}
     }
 
+    handleImage(user){
+        if (!user.imageUrl) {
+            return <i className="fa-solid fa-user-large fa-xl"></i>
+        } else {
+            return <img className="profile-image" src={user.imageUrl} />;
+        }
+    }
+
     render(){
         const { friend, users, type } = this.props;
         let user;
@@ -82,8 +91,8 @@ class FriendIndexItems extends React.Component {
             return(
                 <li className="friend-item">
                         <div className="profilepic">
-                            <div className="userprofile-placeholder">
-                                <i className="fa-solid fa-user-large fa-xl"></i>
+                            <div className="user">
+                                {this.handleImage(user)}
                             </div>
                         </div>
                         <div className='body'>

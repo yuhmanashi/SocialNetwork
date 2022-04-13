@@ -38,14 +38,21 @@
                 .profile-content {
                     display: flex;
                     
-                    .userprofile-placeholder {
-                        margin: 15px;
-                        background: white;
-                        margin-bottom: 25px;
+                    .profile-picture {
     
                         .fa-circle-user {
+                            margin: 15px;
+                            margin-bottom: 25px;
                             font-size: 150px;
                             color: rgb(223, 223, 223)
+                        }
+                        
+                        .profile-image {
+                            margin: 15px;
+                            margin-top: -60px;
+                            height: 150px;
+                            width: 150px;
+                            border-radius: 150px;
                         }
                     }
     
@@ -71,6 +78,7 @@
                     border-radius: 5px;
                     padding: 10px;
                     height: 20px;
+                    margin-top: -10px;
                 }
 
                 .editcoverphotobtn:hover {
@@ -228,6 +236,13 @@
                             .fa-circle-user {
                                 font-size: xx-large;
                                 color: rgb(214, 214, 214);
+                            }
+
+                            .friend .profile-image {
+                                width: 32px;
+                                height: 32px;
+                                border-radius: 32px;
+                                margin-top: -8px;
                             }
 
                             .name {

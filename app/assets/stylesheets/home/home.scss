@@ -18,6 +18,7 @@
                     padding: 10px;
                     background: transparent;
                     padding-left: 0;
+                    padding-bottom: 5px;
                     margin-top: 10px;
 
                     a {
@@ -32,7 +33,13 @@
                                 font-size: 40px;
                                 color: rgb(214, 214, 214);
                             }
-    
+                            
+                            img.profile-image {
+                                height: 40px;
+                                width: 40px;
+                                border-radius: 40px;
+                            }
+                            
                             .name {
                                 margin-left: 10px;
                                 font-weight: bold;
@@ -139,9 +146,9 @@
                     height: 1px;
                 }
 
-                img.map {
-                    width: 313px;
-                    height: 217px;
+                img {
+                    width: 300px;
+                    height: 200px;
                 }
             }
         }

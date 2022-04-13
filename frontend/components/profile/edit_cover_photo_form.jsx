@@ -60,7 +60,7 @@ class EditCoverPhotoForm extends React.Component {
         const { closeModal } = this.props;
 
         return(
-            <div className='editprofileformcontainer'>
+            <div className='editcoverphotoformcontainer'>
                 <div className='form-header'>
                     <h3>Edit Cover Photo</h3>
                     <div onClick={closeModal} className="close-x">X</div>
@@ -71,7 +71,7 @@ class EditCoverPhotoForm extends React.Component {
                         type='file'
                         onChange={this.handleFile}
                     />
-                    <div className='profilebtn' onClick={this.handleSubmit}>Update Cover Photo</div>
+                    <div className='editcoverbtn' onClick={this.handleSubmit}>Update</div>
                 </form>
             </div>
         )

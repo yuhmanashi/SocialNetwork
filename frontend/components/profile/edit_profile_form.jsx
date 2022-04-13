@@ -22,6 +22,7 @@ class EditProfileForm extends React.Component {
         
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
+        this.handleBirthday = this.handleBirthday.bind(this);
     }
     
     handleFile(e){
@@ -57,6 +58,14 @@ class EditProfileForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
+    handleBirthday(){
+        if (this.state.birthday === 'null' || !this.state.birthday) {
+            return ""
+        } else {
+            return this.state.birthday
+        }
+    }
+
     render(){
         if (!this.props) return null;
         const { closeModal } = this.props;
@@ -67,15 +76,15 @@ class EditProfileForm extends React.Component {
                     <h3>Edit Profile</h3>
                     <div onClick={closeModal} className="close-x">X</div>
                 </div>
-                <form>
-                    <input
+                <form className='edit-profile-form'>
+                    <textarea
                         className="biography"
                         value={this.state.biography}
                         onChange={this.update('biography')}
                     />
                     <input
                         className='birthday'
-                        value={this.state.birthday}
+                        value={this.handleBirthday()}
                         onChange={this.update('birthday')}
                     />
                     <input 

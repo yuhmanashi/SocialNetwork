@@ -55,7 +55,7 @@
                         border-top-left-radius: 15px;
                         border-top-right-radius: 15px;
 
-                        .userprofile-placeholder {
+                        .user {
                             border-radius: 15px;
                             align-self: center;
                             background-color: transparent;
@@ -67,6 +67,14 @@
                                 font-size: 100px;
                                 background-color: transparent;
                                 color: white;
+                            }
+
+                            img.profile-image {
+                                width: 200px;
+                                margin: 0;
+                                height: 200px;
+                                border-top-left-radius: 15px;
+                                border-top-right-radius: 15px;
                             }
                         }
                     }

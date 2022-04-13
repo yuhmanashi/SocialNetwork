@@ -4,6 +4,7 @@ import { createComment } from '../../actions/comment_actions';
 
 const mSTP = (state, ownProps) => {
     return {
+        users: state.entities.users,
         comment: { 
             body: '',
             post_id: ownProps.postId,

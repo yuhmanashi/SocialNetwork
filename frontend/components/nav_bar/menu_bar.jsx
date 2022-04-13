@@ -1,7 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class MenuBar extends React.Component {    
+class MenuBar extends React.Component {
+    constructor(props){
+        super(props);
+        this.handleImage = this.handleImage.bind(this);
+    }
+    
+    handleImage(user){
+        if (!user.imageUrl) {
+            return <i className="fa-solid fa-circle-user fa-xl"></i>
+        } else {
+            return <img className="profile-image"src={user.imageUrl} />;
+        }
+    }
+
     render(){
         const { user } = this.props;
         if (!user) return null;
@@ -10,7 +23,7 @@ class MenuBar extends React.Component {
                 <div className="user">
                     <Link to={`/profile/${this.props.currentUserId}`}>
                         <div className="links">
-                            <i className="fa-solid fa-circle-user fa-xl"></i>
+                            {this.handleImage(user)}
                             <div className='name'>
                                 {user.first_name} {user.last_name}
                             </div>

@@ -15,7 +15,7 @@
         justify-content: center;
         margin-top: 10px;
         
-        .userprofile-placeholder {
+        .user {
             padding: 10px;
             background: white;
             padding-left: 0;
@@ -24,6 +24,13 @@
             .fa-circle-user {
                 font-size: 40px;
                 color: rgb(214, 214, 214);
+            }
+
+            .profile-image {
+                width: 40px;
+                height: 40px;
+                border-radius: 40px;
+                margin-top: -5px;
             }
         }
 
@@ -77,7 +84,7 @@
                 border-radius: 15px;
                 padding: 10px;
 
-                .userprofile-placeholder {
+                .user {
                     padding-top: 11px;
                     background: white;
                     padding-left: 0;
@@ -86,6 +93,13 @@
                     .fa-circle-user {
                         font-size: xx-large;
                         color: rgb(214, 214, 214);
+                    }
+
+                    .profile-image {
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 32px;
+                        margin-top: -10px;
                     }
                 }
 

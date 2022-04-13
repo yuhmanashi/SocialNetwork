@@ -18,7 +18,7 @@
             background-color: white;
             margin-bottom: 10px;
 
-            .otherprofile-placeholder {
+            .user {
                 padding: 10px;
                 margin-top: 2px;
                 background: white;
@@ -27,6 +27,13 @@
                 .fa-circle-user {
                     font-size: xx-large;
                     color: #659de6;
+                }
+
+                .profile-image {
+                    height: 32px;
+                    width: 32px;
+                    border-radius: 32px;
+                    margin-top: -10px;
                 }
             }
 
@@ -97,7 +104,7 @@
 .commentform {
     display: flex;
 
-    .userprofile-placeholder {
+    .user {
         padding: 10px;
         margin-top: 3px;
         background: white;
@@ -106,6 +113,12 @@
         .fa-circle-user {
             font-size: xx-large;
             color: rgb(214, 214, 214);
+        }
+
+        .profile-image {
+            height: 32px;
+            width: 32px;
+            border-radius: 32px;
         }
     }
 

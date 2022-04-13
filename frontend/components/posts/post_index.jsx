@@ -6,6 +6,7 @@ class PostIndex extends React.Component {
     super(props);
     this.handlePosts = this.handlePosts.bind(this);
     this.openModal = this.openModal.bind(this);
+    this.handleProfileImage = this.handleProfileImage.bind(this);
   }
 
   handlePosts(){
@@ -52,12 +53,24 @@ class PostIndex extends React.Component {
     }
   }
 
+  handleProfileImage(){
+    const { currentUser } = this.props;
+    let img = <i className="fa-solid fa-circle-user fa-xl"></i>;
+
+    if (currentUser?.imageUrl) {
+      img = <img className="profile-image" src={currentUser.imageUrl} />;
+    }
+
+    return img
+  }
+
   render() {
+    const { currentUser } = this.props;
     return (
       <div className="post-box">
         <div className="create-post-box">
-          <div className='userprofile-placeholder'>
-            <i className="fa-solid fa-circle-user fa-xl"></i>
+          <div className='user'>
+            {this.handleProfileImage()}
           </div>
           <div onClick={this.openModal} className='create-post'>What's on your mind?</div>
         </div>

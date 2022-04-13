@@ -9,6 +9,7 @@ class PostIndexItem extends React.Component {
         this.openModal = this.openModal.bind(this);
         this.handleDeletePost = this.handleDeletePost.bind(this);
         this.handleUser = this.handleUser.bind(this);
+        this.handleProfileImage = this.handleProfileImage.bind(this);
     }
 
     openModal() {
@@ -53,6 +54,16 @@ class PostIndexItem extends React.Component {
         )
     }
 
+    handleProfileImage(){
+        const { post, allUsers } = this.props;
+        const user = allUsers[post.author_id]
+        if (!user.imageUrl) {
+            return <i className="fa-solid fa-circle-user fa-xl"></i>
+        } else {
+            return <img className="profile-image" src={user.imageUrl} />;
+        }
+    }
+
     render(){
         const { post, allUsers } = this.props;
         const user = allUsers[post.author_id]
@@ -62,9 +73,9 @@ class PostIndexItem extends React.Component {
             <li className="postitems">
                 <div className="head">
                     <div className="header">
-                        <div className='userprofile-placeholder'>
+                        <div className='user'>
                             <Link to={`/profile/${user.id}`}>
-                                <i className="fa-solid fa-circle-user fa-xl"></i>
+                                {this.handleProfileImage()}
                             </Link>
                         </div>
                         <div className='namedate'>

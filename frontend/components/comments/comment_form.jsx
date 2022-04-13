@@ -6,6 +6,7 @@ class CommentForm extends React.Component {
     this.state = this.props.comment;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.resetCommentInput = this.resetCommentInput.bind(this);
+    this.handleProfileImage = this.handleProfileImage.bind(this);
   }
 
   handleSubmit(e) {
@@ -21,11 +22,21 @@ class CommentForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+  handleProfileImage(){
+    const { comment, users } = this.props;
+    const user = users[comment.author_id]
+    if (!user.imageUrl) {
+        return <i className="fa-solid fa-circle-user fa-xl"></i>
+    } else {
+        return <img className="profile-image" src={user.imageUrl} />;
+    }
+}
+
   render() {
     return (
       <div className="commentform">
-        <div className='userprofile-placeholder'>
-          <i className="fa-solid fa-circle-user fa-xl"></i>
+        <div className='user'>
+          {this.handleProfileImage()}
         </div>
         <form onSubmit={this.handleSubmit}>
             <input

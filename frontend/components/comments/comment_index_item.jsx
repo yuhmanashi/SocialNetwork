@@ -6,6 +6,7 @@ class CommentIndexItem extends React.Component {
         super(props);
         this.handleDeleteComment = this.handleDeleteComment.bind(this);
         this.openModal = this.openModal.bind(this);
+        this.handleProfileImage = this.handleProfileImage.bind(this);
     }
     
     openModal() {
@@ -41,6 +42,16 @@ class CommentIndexItem extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
+    handleProfileImage(){
+        const { comment, users } = this.props;
+        const user = users[comment.author_id]
+        if (!user.imageUrl) {
+            return <i className="fa-solid fa-circle-user fa-xl"></i>
+        } else {
+            return <img className="profile-image" src={user.imageUrl} />;
+        }
+    }
+
     render(){
         const { comment, post_id, users } = this.props;
 
@@ -60,9 +71,9 @@ class CommentIndexItem extends React.Component {
             return(
                 <div className="comment-items">
                     <div className="comment-body">
-                        <div className="otherprofile-placeholder">
+                        <div className="user">
                             <Link to={`/profile/${comment.author_id}`}>
-                                <i className="fa-solid fa-circle-user fa-xl"></i>
+                                {this.handleProfileImage()}
                             </Link>
                         </div>
                         <div className="comment-box">
