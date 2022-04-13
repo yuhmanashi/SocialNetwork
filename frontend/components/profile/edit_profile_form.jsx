@@ -77,16 +77,21 @@ class EditProfileForm extends React.Component {
                     <div onClick={closeModal} className="close-x">X</div>
                 </div>
                 <form className='edit-profile-form'>
+                    <p>Bio</p>
                     <textarea
                         className="biography"
                         value={this.state.biography}
                         onChange={this.update('biography')}
                     />
+
+                    <p>Birthday</p>
                     <input
                         className='birthday'
                         value={this.handleBirthday()}
                         onChange={this.update('birthday')}
                     />
+
+                    <p>Profile Picture</p>
                     <input 
                         className='image'
                         type='file'

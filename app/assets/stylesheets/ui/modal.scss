@@ -33,7 +33,7 @@
     bottom: 100px;
     border-radius: 10px;
     background: white;
-    height: 340px;
+    height: 510px;
     width: 500px;
 
     .editprofileformcontainer {
@@ -71,6 +71,10 @@
             
             * {
                 margin-bottom: 10px;
+            }
+
+            p {
+                font-weight: bold;
             }
 
             textarea {
