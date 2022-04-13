@@ -44,7 +44,7 @@ class EditProfileForm extends React.Component {
         
         const form = new FormData();
         form.append('user[id]', this.state.id);
-        form.append('user[bio]', this.state.bio);
+        form.append('user[biography]', this.state.biography);
         form.append('user[birthday]', this.state.birthday);
 
         if (this.state.imageFile) {
