@@ -43,7 +43,7 @@ class LogInForm extends React.Component {
 
         if (errors.includes('Wrong email and/or password')) {
             error = 'Invalid email and/or password. Please try again.';
-            color = 'red'
+            color = 'red';
         }
 
         return (
@@ -67,7 +67,7 @@ class LogInForm extends React.Component {
                                 value={ email }
                                 onChange={this.update('email')}
                                 placeholder="Email"
-                                style={({borderColor: color, color: color})}
+                                style={({borderColor: color})}
                             />
                         
                             <input
