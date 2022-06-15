@@ -67,7 +67,7 @@ class LogInForm extends React.Component {
                                 value={ email }
                                 onChange={this.update('email')}
                                 placeholder="Email"
-                                style={({borderColor: color})}
+                                style={({borderColor: color, color: color})}
                             />
                         
                             <input
