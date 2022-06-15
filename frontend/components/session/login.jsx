@@ -92,16 +92,16 @@ class LogInForm extends React.Component {
                 <hr/>
                 <div className="footer">
                     <div className='links'>
-                        <div>Portfolio</div>
-                        <div>LinkedIn</div>
-                        <div>Github</div>
-                        <div>AngelList</div>
+                        <a href="https://yaozxu.com">Portfolio</a>
+                        <a href="https://linkedin.com/in/yaoxu03">LinkedIn</a>
+                        <a href="https://github.com/yuhmanashi">Github</a>
+                        <a href="https://angel.co/u/yao-xu-3">AngelList</a>
                     </div>
                     <hr className="hr-footer"/>
                     <div className="footer-info">
-                        <p>A clone of Facebook</p>
-                        <p>JavaScript React Redux Ruby on Rails HTML SCSS JQuery Jbuilder</p>
-                        <p>Created by Yao Xu</p>
+                        <div className='description'>A clone of Facebook</div>
+                        <div className='technology'>JavaScript React Redux Ruby-on-Rails HTML SCSS JQuery JBuilder</div>
+                        <div className="credit">Created by Yao Xu</div>
                     </div>
                 </div>
             </div>

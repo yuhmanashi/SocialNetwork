@@ -51,7 +51,7 @@
     padding: 3px;
     margin-left: 50px;
     border-radius: 15px;
-    box-shadow: 0 0 10px #d9dbdd, 0 0 10px #d9dbdd, 0 0 10px #d9dbdd;
+    box-shadow: 2px 2px 0 #d9dbdd, -2px 0 0 #d9dbdd, 0 5px 10px .5px #cfcccc;
 
     * {
         background-color: white;
@@ -228,8 +228,11 @@
     .links {
         display: flex;
         
-        div {
+        a {
             margin-right: 30px;
+            text-decoration: none;
+            color:rgb(146, 146, 146);
+            cursor: pointer;
         }
     }
 
@@ -237,6 +240,18 @@
         border: none;
         height: 1px;
         background-color: rgb(209, 209, 209);
+    }
+
+    .footer-info {
+        .description, .technology {
+            word-spacing: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .credit {
+            margin-top: 20px;
+            color: rgb(104, 104, 104);
+        }
     }
 }
 
