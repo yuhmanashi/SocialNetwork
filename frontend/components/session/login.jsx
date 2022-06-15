@@ -89,7 +89,7 @@ class LogInForm extends React.Component {
                         </form>
                     </div>
                 </div>
-                
+                <hr/>
                 <div className="footer">
                     <div className='links'>
                         <div>Portfolio</div>
@@ -99,7 +99,7 @@ class LogInForm extends React.Component {
                     </div>
                     <hr className="hr-footer"/>
                     <div className="footer-info">
-                        <p>A clone of Facebook </p>
+                        <p>A clone of Facebook</p>
                         <p>JavaScript React Redux Ruby on Rails HTML SCSS JQuery Jbuilder</p>
                         <p>Created by Yao Xu</p>
                     </div>

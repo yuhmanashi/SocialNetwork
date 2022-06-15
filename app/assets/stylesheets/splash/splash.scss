@@ -126,8 +126,8 @@
 
     .hr-top {
         margin-top: 15px;
-        width: 400px;
-        background-color: rgb(219, 230, 221);
+        width: 370px;
+        background-color: rgb(209, 209, 209);
         border: none;
         height: 1px;
     }
@@ -218,9 +218,26 @@
     background-color: white;
     position: relative;
     top: 410px;
-    height: 250px;
-    width: 100%;
-    top: 410px;
+    height: 120px;
+    width: 70%;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: rgb(146, 146, 146);
+    font-size: 13px;
+
+    .links {
+        display: flex;
+        
+        div {
+            margin-right: 30px;
+        }
+    }
+
+    .hr-footer {
+        border: none;
+        height: 1px;
+        background-color: rgb(209, 209, 209);
+    }
 }
 
 .signup .modal-child {
