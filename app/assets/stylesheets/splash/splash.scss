@@ -112,10 +112,15 @@
         margin: 7px;
         width: 350px;
         font-size: 17px;
+        color: rgb(0, 110, 255);
     }
 
     input:focus::placeholder {
         color: #c4c4c4;
+    }
+
+    input:focus {
+        border-color: rgb(0, 110, 255);
     }
 
     .login-error {
@@ -218,8 +223,8 @@
     background-color: white;
     position: relative;
     top: 410px;
-    height: 120px;
-    width: 70%;
+    height: 100px;
+    width: 1015px;
     padding-left: 25px;
     padding-right: 25px;
     color: rgb(146, 146, 146);
