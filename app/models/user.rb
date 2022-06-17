@@ -22,6 +22,10 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Comment
 
+    has_many :likes, dependent: :destroy,
+        foreign_key: :user_id,
+        class_name: :Like
+    
     has_one_attached :photo
 
     has_one_attached :cover_photo
