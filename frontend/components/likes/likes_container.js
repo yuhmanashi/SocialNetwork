@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import Likes from './likes'
+import Like from './like'
 import { fetchLikes, createLike, deleteLike } from '../../util/like_util';
 
-const mSTP = state => ({
-    userId: state.session.id
+const mSTP = (state, ownProps) => ({
+    userId: state.session.id,
+    postId: ownProps.postId
 })
 
 const mDTP = dispatch => ({
@@ -12,4 +13,4 @@ const mDTP = dispatch => ({
     deleteLike: likeId => dispatch(deleteLike(likeId))
 })
 
-export default connect(mSTP, mDTP)(Likes);
+export default connect(mSTP, mDTP)(Like);
