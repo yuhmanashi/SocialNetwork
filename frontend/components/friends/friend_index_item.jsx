@@ -29,8 +29,6 @@ class FriendIndexItems extends React.Component {
         let friendship = userFriendships.filter(requested => requested.friend_id === userId && requested.user_id === friend.friend_id)
         friendship[0].status = 'true';
         friend.status = 'true';
-        console.log(friend)
-        console.log(friendship)
         updateFriend(friend).then(updateFriend(friendship[0]));
     }
 
