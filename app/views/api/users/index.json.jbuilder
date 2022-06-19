@@ -36,4 +36,12 @@
           end
       end
     end
+
+    json.likes do
+      user.likes.each do |like|
+        json.set! like.id do
+          json.extract! like, :id, :liked, :post_id, :comment_id
+        end
+      end
+    end
 end
