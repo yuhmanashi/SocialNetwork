@@ -19,7 +19,10 @@ const mDTP = dispatch => ({
   fetchPosts: () => dispatch(fetchPosts()),
   deletePost: postId => dispatch(deletePost(postId)),
   openModal: form => dispatch(openModal(form)),
-  givePostId: postId => dispatch(givePostId(postId))
+  givePostId: postId => dispatch(givePostId(postId)),
+  fetchLikes: () => dispatch(fetchLikes()),
+  createLike: like => dispatch(createLike(like)),
+  deleteLike: likeId => dispatch(deleteLike(likeId))
 });
 
 export default connect(mSTP, mDTP)(PostIndex);

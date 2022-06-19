@@ -100,7 +100,7 @@ class PostIndexItem extends React.Component {
                 </div>
                 <hr className='hr-top'/>
                 <div className="likecomment">
-                    <i className="fa-regular fa-thumbs-up"> Like </i>
+                    <div className="like-button"><i className="fa-regular fa-thumbs-up"> Like </i></div>
                     <i className="fa-regular fa-message"> Comment </i>
                 </div>
                 <hr className="hr-bottom" />
