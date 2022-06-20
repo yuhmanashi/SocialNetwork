@@ -16,8 +16,10 @@ class Like extends React.Component {
     handleClick(e){
         e.preventDefault();
         const { postId, userId, createLike, deleteLike } = this.props;
+        let data = {'user_id': userId, 'post_id': postId};
         // check if user has liked post
         // for now just make sure liking works
+        createLike(data)
     }
 
     render(){

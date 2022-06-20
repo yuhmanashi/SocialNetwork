@@ -1,6 +1,4 @@
 class Like < ApplicationRecord
-    validates :liked, presence: true
-
     belongs_to :user,
         foreign_key: :user_id,
         class_name: :User
