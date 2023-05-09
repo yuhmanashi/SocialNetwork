@@ -8,3 +8,11 @@ json.comments do
         end
     end
 end
+
+json.likes do
+    post.likes.each do |like|
+        json.set! like.id do
+            json.extract! like, :id, :liked, :post_id, :user_id
+        end
+    end
+end

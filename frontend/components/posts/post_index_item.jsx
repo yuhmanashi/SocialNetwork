@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentIndexContainer from '../comments/comment_index_container';
-import CreateCommentFormContainer from '../comments/create_comment_form_container'
+import CreateCommentFormContainer from '../comments/create_comment_form_container';
+import LikesContainer from '../likes/likes_container';
 import { Link } from 'react-router-dom';
 
 class PostIndexItem extends React.Component {
@@ -100,7 +101,7 @@ class PostIndexItem extends React.Component {
                 </div>
                 {/* <hr className='hr-top'/>
                 <div className="likecomment">
-                    <i className="fa-regular fa-thumbs-up"> Like </i>
+                    <LikesContainer postId={post.id} />
                     <i className="fa-regular fa-message"> Comment </i>
                 </div> */}
                 <hr className="hr-bottom" />

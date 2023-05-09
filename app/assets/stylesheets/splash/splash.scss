@@ -51,7 +51,7 @@
     padding: 3px;
     margin-left: 50px;
     border-radius: 15px;
-    box-shadow: 0 0 10px #d9dbdd, 0 0 10px #d9dbdd, 0 0 10px #d9dbdd;
+    box-shadow: 2px 2px 0 #d9dbdd, -2px 0 0 #d9dbdd, 0 5px 10px .5px #cfcccc;
 
     * {
         background-color: white;
@@ -118,6 +118,10 @@
         color: #c4c4c4;
     }
 
+    input:focus {
+        border-color: rgb(0, 110, 255);
+    }
+
     .login-error {
         color: red;
         margin-left: 50px;
@@ -126,8 +130,8 @@
 
     .hr-top {
         margin-top: 15px;
-        width: 400px;
-        background-color: rgb(219, 230, 221);
+        width: 370px;
+        background-color: rgb(209, 209, 209);
         border: none;
         height: 1px;
     }
@@ -215,12 +219,44 @@
 }
 
 .footer {
-    background-color: white;
+    background-color: transparent;
     position: relative;
     top: 410px;
-    height: 250px;
-    width: 100%;
-    top: 410px;
+    height: 100px;
+    width: 1015px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: rgb(146, 146, 146);
+    font-size: 13px;
+
+    .links {
+        display: flex;
+        
+        a {
+            margin-right: 30px;
+            text-decoration: none;
+            color:rgb(146, 146, 146);
+            cursor: pointer;
+        }
+    }
+
+    .hr-footer {
+        border: none;
+        height: 1px;
+        background-color: rgb(209, 209, 209);
+    }
+
+    .footer-info {
+        .description, .technology {
+            word-spacing: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .credit {
+            margin-top: 20px;
+            color: rgb(104, 104, 104);
+        }
+    }
 }
 
 .signup .modal-child {

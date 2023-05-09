@@ -10,7 +10,7 @@ class PostIndex extends React.Component {
   }
 
   handlePosts(){
-    const { allPosts, userPosts, user_id, deletePost, openModal, givePostId, allUsers, profile } = this.props;
+    const { allPosts, userPosts, user_id, deletePost, openModal, givePostId, allUsers, profile, createLike, deleteLike } = this.props;
     let posts;
     if (profile && !userPosts[0]) {
       return (
@@ -37,6 +37,8 @@ class PostIndex extends React.Component {
                 givePostId={givePostId}
                 openModal={openModal}
                 key={post.id}
+                createLike={createLike}
+                deleteLike={deleteLike}
               />
             ))
           }
