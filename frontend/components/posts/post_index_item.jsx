@@ -98,11 +98,11 @@ class PostIndexItem extends React.Component {
                 <div className="body">
                     <p>{post.body}</p>
                 </div>
-                <hr className='hr-top'/>
+                {/* <hr className='hr-top'/>
                 <div className="likecomment">
                     <i className="fa-regular fa-thumbs-up"> Like </i>
                     <i className="fa-regular fa-message"> Comment </i>
-                </div>
+                </div> */}
                 <hr className="hr-bottom" />
                 <div className="comments">
                     <CommentIndexContainer  postId={post.id}/>
